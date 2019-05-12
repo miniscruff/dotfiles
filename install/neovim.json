@@ -1,0 +1,4 @@
+{
+    "apt-repositories": ["ppa:neovim-ppa/stable"],
+    "system-packages": ["neovim"]
+}
