@@ -15,27 +15,33 @@ header = f"""# This file was auto generated
 # View the readme on how to edit
 # To regenerate run `python generate.py`
 
-{subheader("Installing Essentials")}sudo apt install -y software-properties-common build-essential git
+{subheader("Installing Essentials")}sudo apt install -y \\
+{indent}software-properties-common \\
+{indent}build-essential \\
+{indent}curl \\
+{indent}git
 sudo apt upgrade -y
 sudo apt update
 
 """
 
+footer = f"""{subheader("Completed")}"""
+
 
 def combine_apt_repositories(repos):
     repos = set(repos)
-    lines = [f'sudo add-apt-repository {repos.pop()}']
-    for repo in repos:
+    lines = [f'sudo add-apt-repository']
+    for repo in sorted(repos):
         lines.append(f'{indent}{repo}')
-    return subheader('Adding Apt Repositories') + ' \\ \n'.join(lines)
+    return subheader('Adding Apt Repositories') + ' \\\n'.join(lines)
 
 
 def combine_system_packages(packages):
     packages = set(packages)
-    lines = [f'sudo install -y {packages.pop()}']
-    for package in packages:
+    lines = ['sudo apt install -y']
+    for package in sorted(packages):
         lines.append(f'{indent}{package}')
-    return subheader('Installing System Packages') + ' \\ \n'.join(lines)
+    return subheader('Installing System Packages') + ' \\\n'.join(lines)
 
 
 def combine_git_packages(packages):
@@ -52,7 +58,7 @@ def combine_git_packages(packages):
 
 
 def combine_package_configs(commands):
-    return ''
+    return subheader('Running package configs') + '\n'.join(commands)
 
 
 def combine_post_installs(commands):
@@ -68,7 +74,15 @@ combine_order = [
 ]
 
 def settings_file_symlink():
-    pass
+    lines = []
+    for root, _, files in os.walk('settings'):
+        for filename in files:
+            lines.append(f'ln dotfiles/{root} ~/{filename}')
+    return ''.join([
+        subheader('Creating symlinks'),
+        '\n'.join(lines),
+        '\n\n'
+    ])
 
 
 def merge_commands(all_commands):
@@ -85,7 +99,7 @@ if __name__ == '__main__':
         "system-packages": [],
         "git-packages": [],
         "git-install": [],
-        "package-config": [],
+        "package-configs": [],
         "post-install": [],
     }
     for file in os.listdir('install'):
@@ -98,7 +112,10 @@ if __name__ == '__main__':
                 all_commands[key] += value
 
     final_script = merge_commands(all_commands)
+    symlinks = settings_file_symlink()
     print('combining scripts')
     with open('install.sh', 'w') as script_file:
         script_file.write(header)
         script_file.write(final_script)
+        script_file.write(symlinks)
+        script_file.write(footer)

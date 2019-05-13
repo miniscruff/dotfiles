@@ -1,4 +1,8 @@
 {
     "apt-repositories": ["ppa:neovim-ppa/stable"],
-    "system-packages": ["neovim"]
+    "system-packages": ["neovim"],
+    "package-configs": [
+        "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
+        "nvim --headless +PlugInstall +qa"
+    ]
 }
