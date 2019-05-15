@@ -6,8 +6,8 @@ import json
 
 
 def subheader(label):
-    comment = '#' * (len(label) + 5)
-    return f'{comment}\necho {label}\n{comment}\n\n'
+    comment = '#' * len(label)
+    return f'echo {comment}\necho {label}\necho {comment}\n\n'
 
 
 indent = '  '
@@ -23,6 +23,8 @@ header = f"""# This file was auto generated
 sudo apt upgrade -y
 sudo apt update
 
+git clone https://github.com/miniscruff/dotfiles.git
+
 """
 
 footer = f"""{subheader("Completed")}"""
@@ -30,7 +32,7 @@ footer = f"""{subheader("Completed")}"""
 
 def combine_apt_repositories(repos):
     repos = set(repos)
-    lines = [f'sudo add-apt-repository']
+    lines = [f'sudo add-apt-repository -y']
     for repo in sorted(repos):
         lines.append(f'{indent}{repo}')
     return subheader('Adding Apt Repositories') + ' \\\n'.join(lines)
@@ -45,7 +47,12 @@ def combine_system_packages(packages):
 
 
 def combine_git_packages(packages):
-    lines = []
+    lines = [
+        'cd dotfiles',
+        'mkdir packages',
+        'cd packages',
+        '',
+    ]
     for git_package in packages:
         lines.append('echo Installing ' + git_package['path'])
         lines.append(f'git clone {git_package["clone"]}')
@@ -53,6 +60,7 @@ def combine_git_packages(packages):
         lines.extend(git_package['commands'])
         lines.append('cd ..')
         lines.append('')
+    lines.append('cd ../..')
 
     return subheader('Installing Git Packages') + '\n'.join(lines)
 
@@ -77,7 +85,8 @@ def settings_file_symlink():
     lines = []
     for root, _, files in os.walk('settings'):
         for filename in files:
-            lines.append(f'ln dotfiles/{root} ~/{filename}')
+            link_path = f'{root}/{filename}'.replace('settings/', '')
+            lines.append(f'ln dotfiles/{root}/{filename} {link_path}')
     return ''.join([
         subheader('Creating symlinks'),
         '\n'.join(lines),

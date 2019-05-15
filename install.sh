@@ -2,9 +2,9 @@
 # View the readme on how to edit
 # To regenerate run `python generate.py`
 
-##########################
+echo #####################
 echo Installing Essentials
-##########################
+echo #####################
 
 sudo apt install -y \
   software-properties-common \
@@ -14,16 +14,18 @@ sudo apt install -y \
 sudo apt upgrade -y
 sudo apt update
 
-############################
-echo Adding Apt Repositories
-############################
+git clone https://github.com/miniscruff/dotfiles.git
 
-sudo add-apt-repository \
+echo #######################
+echo Adding Apt Repositories
+echo #######################
+
+sudo add-apt-repository -y \
   ppa:neovim-ppa/stable
 
-###############################
+echo ##########################
 echo Installing System Packages
-###############################
+echo ##########################
 
 sudo apt install -y \
   g++ \
@@ -40,9 +42,13 @@ sudo apt install -y \
   neovim \
   valac
 
-############################
+echo #######################
 echo Installing Git Packages
-############################
+echo #######################
+
+cd dotfiles
+mkdir packages
+cd packages
 
 echo Installing vte-ng
 git clone https://github.com/thestinger/vte-ng.git
@@ -63,22 +69,23 @@ sudo mkdir -p /lib/terminfo/x
 sudo ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
 cd ..
 
+cd ../..
 
-############################
+echo #######################
 echo Running package configs
-############################
+echo #######################
 
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo .config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim --headless +PlugInstall +qa
 
-######################
+echo #################
 echo Creating symlinks
-######################
+echo #################
 
-ln dotfiles/settings ~/.zshrc
-ln dotfiles/settings/.config/nvim ~/init.vim
+ln dotfiles/settings/.zshrc .zshrc
+ln dotfiles/settings/.config/nvim/init.vim .config/nvim/init.vim
 
-##############
+echo #########
 echo Completed
-##############
+echo #########
 
