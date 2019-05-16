@@ -54,11 +54,11 @@ def combine_git_packages(packages):
         '',
     ]
     for git_package in packages:
-        lines.append('echo Installing ' + git_package['path'])
         lines.append(f'git clone {git_package["clone"]}')
-        lines.append('cd ' + git_package['path'])
-        lines.extend(git_package['commands'])
-        lines.append('cd ..')
+        if 'path' in git_package:
+            lines.append('cd ' + git_package['path'])
+            lines.extend(git_package['commands'])
+            lines.append('cd ..')
         lines.append('')
     lines.append('cd ../..')
 

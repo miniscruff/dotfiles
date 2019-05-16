@@ -1,0 +1,11 @@
+{
+    "system-packages": ["zsh"],
+    "git-packages": [
+        {
+            "clone": "--depth=1 https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh"
+        }
+    ],
+    "package-configs": [
+        "chsh -s $(which zsh)"
+    ]
+}

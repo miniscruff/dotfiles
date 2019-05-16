@@ -40,7 +40,8 @@ sudo apt install -y \
   libpcre2-dev \
   libxml2-utils \
   neovim \
-  valac
+  valac \
+  zsh
 
 echo #######################
 echo Installing Git Packages
@@ -50,7 +51,8 @@ cd dotfiles
 mkdir packages
 cd packages
 
-echo Installing vte-ng
+git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+
 git clone https://github.com/thestinger/vte-ng.git
 cd vte-ng
 echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH"
@@ -59,7 +61,6 @@ make
 sudo make install
 cd ..
 
-echo Installing termite
 git clone --recursive https://github.com/thestinger/termite.git
 cd termite
 make
@@ -75,6 +76,7 @@ echo #######################
 echo Running package configs
 echo #######################
 
+chsh -s $(which zsh)
 curl -fLo .config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo #################
