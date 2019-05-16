@@ -66,11 +66,11 @@ def combine_git_packages(packages):
 
 
 def combine_package_configs(commands):
-    return subheader('Running package configs') + '\n'.join(commands)
+    return subheader('Running package configs') + '\n'.join(commands) + '\n\n'
 
 
 def combine_post_installs(commands):
-    return ''
+    return subheader('Running post install') + '\n'.join(commands) + '\n\n'
 
 
 combine_order = [
@@ -78,7 +78,6 @@ combine_order = [
     ('system-packages', combine_system_packages),
     ('git-packages', combine_git_packages),
     ('package-configs', combine_package_configs),
-    ('post-install', combine_post_installs),
 ]
 
 def settings_file_symlink():
@@ -127,4 +126,5 @@ if __name__ == '__main__':
         script_file.write(header)
         script_file.write(final_script)
         script_file.write(symlinks)
+        script_file.write(combine_post_installs(all_commands['post-install']))
         script_file.write(footer)

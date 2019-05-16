@@ -76,7 +76,6 @@ echo Running package configs
 echo #######################
 
 curl -fLo .config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim --headless +PlugInstall +qa
 
 echo #################
 echo Creating symlinks
@@ -84,6 +83,12 @@ echo #################
 
 ln dotfiles/settings/.zshrc .zshrc
 ln dotfiles/settings/.config/nvim/init.vim .config/nvim/init.vim
+
+echo ####################
+echo Running post install
+echo ####################
+
+nvim --headless +PlugInstall +qa
 
 echo #########
 echo Completed
