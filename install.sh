@@ -53,6 +53,8 @@ cd packages
 
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 
+git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
+
 git clone https://github.com/thestinger/vte-ng.git
 cd vte-ng
 echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH"
@@ -77,6 +79,9 @@ echo Running package configs
 echo #######################
 
 chsh -s $(which zsh)
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval (pyenv init -)
 curl -fLo .config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo #################
@@ -90,6 +95,11 @@ echo ####################
 echo Running post install
 echo ####################
 
+pyenv install 3.7.3
+pyenv install 3.6.8
+pyenv global 3.7.3
+python -m pip install --upgrade pip
+pip install jedi neovim httpie
 nvim --headless +PlugInstall +qa
 
 echo #########
