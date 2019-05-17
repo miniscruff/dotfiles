@@ -19,6 +19,7 @@ header = f"""# This file was auto generated
 {indent}software-properties-common \\
 {indent}build-essential \\
 {indent}curl \\
+{indent}make \\
 {indent}git
 sudo apt upgrade -y
 sudo apt update

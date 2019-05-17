@@ -10,6 +10,7 @@ sudo apt install -y \
   software-properties-common \
   build-essential \
   curl \
+  make \
   git
 sudo apt upgrade -y
 sudo apt update
@@ -33,14 +34,27 @@ sudo apt install -y \
   gperf \
   gtk-doc-tools \
   intltool \
+  libbz2-dev \
+  libffi-dev \
   libgirepository1.0-dev \
   libglib3.0-cil-dev \
   libgnutls28-dev \
   libgtk-3-dev \
+  liblzma-dev \
+  libncurses5-dev \
+  libncursesw5-dev \
   libpcre2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libssl-dev \
   libxml2-utils \
+  llvm \
   neovim \
+  python-openssl \
+  tk-dev \
   valac \
+  xz-utils \
+  zlib1g-dev \
   zsh
 
 echo #######################
@@ -81,7 +95,7 @@ echo #######################
 chsh -s $(which zsh)
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval (pyenv init -)
+eval "$(pyenv init -)"
 curl -fLo .config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo #################
