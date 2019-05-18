@@ -20,6 +20,7 @@ sudo apt install -y \
   libssl-dev \
   libxml2-utils \
   llvm \
+  neofetch \
   neovim \
   python-openssl \
   tk-dev \
