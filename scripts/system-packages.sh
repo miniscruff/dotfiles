@@ -25,6 +25,7 @@ sudo apt install -y \
   python-openssl \
   tk-dev \
   valac \
+  w3m \
   xz-utils \
   zlib1g-dev \
   zsh

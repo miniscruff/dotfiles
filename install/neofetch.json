@@ -1,3 +1,6 @@
 {
-    "system-packages": "neofetch"
+    "system-packages": [
+        "neofetch",
+        "w3m"
+    ]
 }
