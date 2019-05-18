@@ -4,6 +4,7 @@ sudo apt install -y \
   gnutls-bin \
   gperf \
   gtk-doc-tools \
+  i3 \
   intltool \
   libbz2-dev \
   libffi-dev \
