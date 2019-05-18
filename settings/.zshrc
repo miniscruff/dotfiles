@@ -13,4 +13,11 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Configure ssh keys
+eval "$(ssh-agent -s)"
+ls $HOME/.ssh | \
+    grep -v "known_hosts\|.*pub" | \
+    xargs -I{} ssh-add $HOME/.ssh/{}
+clear
+
 neofetch
