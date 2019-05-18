@@ -29,6 +29,7 @@ echo Installing System Packages
 echo ##########################
 
 sudo apt install -y \
+  fonts-hack-ttf \
   g++ \
   gnutls-bin \
   gperf \
