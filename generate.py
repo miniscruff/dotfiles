@@ -86,6 +86,9 @@ def settings_file_symlink():
     for root, _, files in os.walk('settings'):
         for filename in files:
             link_path = f'{root}/{filename}'.replace('settings/', '')
+            if '/' in link_path:
+                parent_folder = link_path[:link_path.rfind('/')]
+                lines.append('mkdir ' + parent_folder)
             lines.append(f'ln dotfiles/{root}/{filename} {link_path}')
     return ''.join([
         subheader('Creating symlinks'),

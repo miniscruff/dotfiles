@@ -104,7 +104,10 @@ echo Creating symlinks
 echo #################
 
 ln dotfiles/settings/.zshrc .zshrc
+mkdir .config/nvim
 ln dotfiles/settings/.config/nvim/init.vim .config/nvim/init.vim
+mkdir .config/termite
+ln dotfiles/settings/.config/termite/config .config/termite/config
 
 echo ####################
 echo Running post install
