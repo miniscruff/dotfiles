@@ -1,0 +1,29 @@
+sudo apt install -y \
+  fonts-hack-ttf \
+  g++ \
+  gnutls-bin \
+  gperf \
+  gtk-doc-tools \
+  intltool \
+  libbz2-dev \
+  libffi-dev \
+  libgirepository1.0-dev \
+  libglib3.0-cil-dev \
+  libgnutls28-dev \
+  libgtk-3-dev \
+  liblzma-dev \
+  libncurses5-dev \
+  libncursesw5-dev \
+  libpcre2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libssl-dev \
+  libxml2-utils \
+  llvm \
+  neovim \
+  python-openssl \
+  tk-dev \
+  valac \
+  xz-utils \
+  zlib1g-dev \
+  zsh

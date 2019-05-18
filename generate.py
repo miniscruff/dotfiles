@@ -5,140 +5,141 @@ import sys
 import json
 
 
-def subheader(label):
-    comment = '#' * len(label)
-    return f'echo {comment}\necho {label}\necho {comment}\n\n'
-
-
 indent = '  '
-header = f"""# This file was auto generated
-# View the readme on how to edit
-# To regenerate run `python generate.py`
-
-{subheader("Installing Essentials")}sudo apt install -y \\
-{indent}software-properties-common \\
-{indent}build-essential \\
-{indent}curl \\
-{indent}make \\
-{indent}git
-sudo apt upgrade -y
-sudo apt update
-
-git clone https://github.com/miniscruff/dotfiles.git
-
-"""
-
-footer = f"""{subheader("Completed")}"""
 
 
-def combine_apt_repositories(repos):
-    repos = set(repos)
-    lines = [f'sudo add-apt-repository -y']
-    for repo in sorted(repos):
-        lines.append(f'{indent}{repo}')
-    return subheader('Adding Apt Repositories') + ' \\\n'.join(lines)
+class AptRepositories:
+    key = 'apt-repositories'
+
+    def __init__(self):
+        self.repos = set()
+
+    def __iadd__(self, other):
+        self.repos.update(other)
+        return self
+
+    def combine(self):
+        lines = [f'sudo add-apt-repository -y']
+        for repo in sorted(self.repos):
+            lines.append(f'{indent}{repo}')
+        return ' \\\n'.join(lines)
 
 
-def combine_system_packages(packages):
-    packages = set(packages)
-    lines = ['sudo apt install -y']
-    for package in sorted(packages):
-        lines.append(f'{indent}{package}')
-    return subheader('Installing System Packages') + ' \\\n'.join(lines)
+class SystemPackages:
+    key = 'system-packages'
+
+    def __init__(self):
+        self.packages = set()
+
+    def __iadd__(self, other):
+        self.packages.update(other)
+        return self
+
+    def combine(self):
+        lines = ['sudo apt install -y']
+        for package in sorted(self.packages):
+            lines.append(f'{indent}{package}')
+        return ' \\\n'.join(lines)
 
 
-def combine_git_packages(packages):
-    lines = [
-        'cd dotfiles',
-        'mkdir packages',
-        'cd packages',
-        '',
-    ]
-    for git_package in packages:
-        lines.append(f'git clone {git_package["clone"]}')
-        if 'path' in git_package:
-            lines.append('cd ' + git_package['path'])
-            lines.extend(git_package['commands'])
-            lines.append('cd ..')
-        lines.append('')
-    lines.append('cd ../..')
+class GitPackages:
+    key = 'git-packages'
 
-    return subheader('Installing Git Packages') + '\n'.join(lines)
+    def __init__(self):
+        self.packages = []
 
+    def __iadd__(self, other):
+        self.packages.extend(other)
+        return self
 
-def combine_package_configs(commands):
-    return subheader('Running package configs') + '\n'.join(commands) + '\n\n'
+    def combine(self):
+        lines = [
+            'mkdir packages',
+            'cd packages',
+            '',
+        ]
+        for git_package in self.packages:
+            lines.append(f'git clone {git_package["clone"]}')
+            if 'path' in git_package:
+                lines.append('cd ' + git_package['path'])
+                lines.extend(git_package['commands'])
+                lines.append('cd ..')
+            lines.append('')
+        lines.append('cd ..')
 
-
-def combine_post_installs(commands):
-    return subheader('Running post install') + '\n'.join(commands) + '\n\n'
-
-
-combine_order = [
-    ('apt-repositories', combine_apt_repositories),
-    ('system-packages', combine_system_packages),
-    ('git-packages', combine_git_packages),
-    ('package-configs', combine_package_configs),
-]
-
-def settings_file_symlink():
-    dirs = set()
-    links = []
-    for root, _, files in os.walk('settings'):
-        for filename in files:
-            link_path = f'{root}/{filename}'.replace('settings/', '')
-            if '/' in link_path:
-                parent_folder = link_path[:link_path.rfind('/')]
-                dirs.add(parent_folder)
-            links.append(f'ln dotfiles/{root}/{filename} {link_path}')
-
-    dir_lines = []
-    for dir in sorted(dirs):
-        dir_lines.append('mkdir ' + dir)
-
-    lines = []
-    lines.extend(dir_lines)
-    lines.append('')
-    lines.extend(links)
-    return ''.join([
-        subheader('Creating symlinks'),
-        '\n'.join(lines),
-        '\n\n'
-    ])
+        return '\n'.join(lines)
 
 
-def merge_commands(all_commands):
-    return '\n\n'.join(
-        func(all_commands[key])
-        for key, func in combine_order
-        if key in all_commands
-    )
+class ShellCommands:
+
+    def __init__(self):
+        self.commands = []
+
+    def __iadd__(self, other):
+        self.commands.extend(other)
+        return self
+
+    def combine(self):
+        return '\n'.join(self.commands)
+
+
+class PackageConfigs(ShellCommands):
+    key = 'package-configs'
+
+
+class PostInstalls(ShellCommands):
+    key = 'post-install'
+
+
+class Symlinks:
+    key = 'symlinks'
+
+    def combine(self):
+        dirs = set()
+        links = []
+        for root, _, files in os.walk('settings'):
+            for filename in files:
+                link_path = f'{root}/{filename}'[9:] # remove settings/
+                if '/' in link_path:
+                    parent_folder = link_path[:link_path.rfind('/')]
+                    dirs.add(parent_folder)
+                links.append(f'ln {link_path} $HOME/{link_path}')
+
+        dir_lines = []
+        for dir in sorted(dirs):
+            dir_lines.append(f'mkdir $HOME/{dir}')
+
+        return ''.join([
+            'cd settings\n\n',
+            '\n'.join(dir_lines),
+            '\n\n',
+            '\n'.join(links),
+            '\n\ncd ..'
+        ])
 
 
 if __name__ == '__main__':
-    all_commands = {
-        "apt-repositories": [],
-        "system-packages": [],
-        "git-packages": [],
-        "git-install": [],
-        "package-configs": [],
-        "post-install": [],
-    }
+    handlers = [
+        AptRepositories(),
+        SystemPackages(),
+        GitPackages(),
+        PackageConfigs(),
+        PostInstalls(),
+        Symlinks(),
+    ]
+
     for file in os.listdir('install'):
         with open('install/' + file) as install_file:
             print('loading file ', file)
             data = json.load(install_file)
-            for key, value in data.items():
-                if not isinstance(value, list):
-                    value = [value]
-                all_commands[key] += value
+            for key, values in data.items():
+                if not isinstance(values, list):
+                    values = [values]
+                for handler in handlers:
+                    if handler.key == key:
+                        handler += values
 
-    command_lines = merge_commands(all_commands)
-    symlinks = settings_file_symlink()
-    print('combining scripts')
-    with open('install.sh', 'w') as script_file:
-        script_file.write(header)
-        script_file.write(command_lines)
-        script_file.write(symlinks)
-        script_file.write(combine_post_installs(all_commands['post-install']))
-        script_file.write(footer)
+    for handler in handlers:
+        with open(f'scripts/{handler.key}.sh', 'w') as handler_file:
+            print('Writing handler ' + handler.__class__.__name__)
+            handler_file.write(handler.combine())
