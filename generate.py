@@ -82,14 +82,24 @@ combine_order = [
 ]
 
 def settings_file_symlink():
-    lines = []
+    dirs = set()
+    links = []
     for root, _, files in os.walk('settings'):
         for filename in files:
             link_path = f'{root}/{filename}'.replace('settings/', '')
             if '/' in link_path:
                 parent_folder = link_path[:link_path.rfind('/')]
-                lines.append('mkdir ' + parent_folder)
-            lines.append(f'ln dotfiles/{root}/{filename} {link_path}')
+                dirs.add(parent_folder)
+            links.append(f'ln dotfiles/{root}/{filename} {link_path}')
+
+    dir_lines = []
+    for dir in sorted(dirs):
+        dir_lines.append('mkdir ' + dir)
+
+    lines = []
+    lines.extend(dir_lines)
+    lines.append('')
+    lines.extend(links)
     return ''.join([
         subheader('Creating symlinks'),
         '\n'.join(lines),
@@ -123,12 +133,12 @@ if __name__ == '__main__':
                     value = [value]
                 all_commands[key] += value
 
-    final_script = merge_commands(all_commands)
+    command_lines = merge_commands(all_commands)
     symlinks = settings_file_symlink()
     print('combining scripts')
     with open('install.sh', 'w') as script_file:
         script_file.write(header)
-        script_file.write(final_script)
+        script_file.write(command_lines)
         script_file.write(symlinks)
         script_file.write(combine_post_installs(all_commands['post-install']))
         script_file.write(footer)
