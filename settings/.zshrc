@@ -13,6 +13,11 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Functions
+copy () {
+    xclip -selection clipboard -i
+}
+
 # Configure ssh keys
 eval "$(ssh-agent -s)"
 ls $HOME/.ssh | \
