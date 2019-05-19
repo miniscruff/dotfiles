@@ -1,5 +1,3 @@
-# generates the full install.sh script
-# built from toml files inside /install
 import os
 import sys
 import json
