@@ -1,0 +1,11 @@
+{
+    "system-packages": [
+        "ranger",
+        "caca-utils",
+        "highlight",
+        "w3m",
+        "atool",
+        "poppler-utils",
+        "mediainfo"
+    ]
+}
