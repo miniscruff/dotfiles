@@ -7,6 +7,14 @@ sudo apt install -y \
 sudo apt upgrade -y
 sudo apt update
 
+# set mod for scripts
+chmod 0755 scripts/apt-repositories.sh
+chmod 0755 scripts/system-packages.sh
+chmod 0755 scripts/git-packages.sh
+chmod 0755 scripts/package-configs.sh
+chmod 0755 scripts/symlinks.sh
+chmod 0755 scripts/post-install.sh
+
 # Run generated scripts
 ./scripts/apt-repositories.sh
 ./scripts/system-packages.sh
