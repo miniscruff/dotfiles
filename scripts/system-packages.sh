@@ -1,4 +1,5 @@
 sudo apt install -y \
+  feh \
   fonts-hack-ttf \
   g++ \
   gnutls-bin \

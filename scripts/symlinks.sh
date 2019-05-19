@@ -7,6 +7,7 @@ mkdir $HOME/.config/nvim
 mkdir $HOME/.config/termite
 
 ln .zshrc $HOME/.zshrc
+ln .profile $HOME/.profile
 ln .config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln .config/neofetch/config.conf $HOME/.config/neofetch/config.conf
 ln .config/i3/config $HOME/.config/i3/config
