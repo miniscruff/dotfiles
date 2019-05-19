@@ -1,7 +1,6 @@
 {
     "system-packages": [
         "ranger",
-        "caca-utils",
         "highlight",
         "w3m",
         "atool",

@@ -103,10 +103,16 @@ class Symlinks:
                 if '/' in link_path:
                     parent_folder = link_path[:link_path.rfind('/')]
                     dirs.add(parent_folder)
-                links.append(f'ln {link_path} $HOME/{link_path}')
+
+                if ' ' in link_path:
+                    links.append(f'ln "{link_path}" "$HOME/{link_path}"')
+                else:
+                    links.append(f'ln {link_path} $HOME/{link_path}')
 
         dir_lines = []
         for dir in sorted(dirs):
+            if ' ' in dir:
+                dir = f'"{dir}"'
             dir_lines.append(f'mkdir $HOME/{dir}')
 
         return ''.join([

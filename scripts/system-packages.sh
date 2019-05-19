@@ -1,8 +1,6 @@
 sudo apt install -y \
   atool \
-  caca-utils \
   feh \
-  fonts-hack-ttf \
   g++ \
   gnutls-bin \
   gperf \
