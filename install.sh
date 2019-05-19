@@ -2,8 +2,7 @@ sudo apt install -y \
   software-properties-common \
   build-essential \
   curl \
-  make \
-  git
+  make
 sudo apt upgrade -y
 sudo apt update
 
