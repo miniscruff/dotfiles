@@ -1,10 +1,13 @@
 sudo apt install -y \
+  atool \
+  caca-utils \
   feh \
   fonts-hack-ttf \
   g++ \
   gnutls-bin \
   gperf \
   gtk-doc-tools \
+  highlight \
   i3 \
   intltool \
   libbz2-dev \
@@ -22,9 +25,12 @@ sudo apt install -y \
   libssl-dev \
   libxml2-utils \
   llvm \
+  mediainfo \
   neofetch \
   neovim \
+  poppler-utils \
   python-openssl \
+  ranger \
   tk-dev \
   valac \
   w3m \
