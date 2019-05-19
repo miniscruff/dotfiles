@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack 12
+font pango:Hack 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -137,8 +137,18 @@ bindsym $mod+z mode "resize"
 for_window [class="^.*"] border pixel 1
 focus_follows_mouse no
 
+# Audio settings
+# M / Shift M = Mute / Unmute
+bindsym $mod+m exec --no-startup-id amixer -D pulse sset Master mute
+bindsym $mod+shift+m exec --no-startup-id amixer -D pulse sset Master unmute
+# equal / plus = lower / raise volume
+bindsym $mod+equal exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym $mod+shift+equal exec --no-startup-id amixer -D pulse sset Master 5%+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango:Hack 12
+        separator_symbol " | "
         status_command i3status
 }
