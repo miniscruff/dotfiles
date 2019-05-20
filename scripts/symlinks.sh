@@ -10,7 +10,6 @@ mkdir $HOME/.config/termite
 mkdir $HOME/.fonts
 
 ln .zshrc $HOME/.zshrc
-ln .profile $HOME/.profile
 ln ".fonts/Hack Bold Nerd Font Complete Mono.ttf" "$HOME/.fonts/Hack Bold Nerd Font Complete Mono.ttf"
 ln ".fonts/Hack Regular Nerd Font Complete Mono.ttf" "$HOME/.fonts/Hack Regular Nerd Font Complete Mono.ttf"
 ln ".fonts/Hack Italic Nerd Font Complete Mono.ttf" "$HOME/.fonts/Hack Italic Nerd Font Complete Mono.ttf"
