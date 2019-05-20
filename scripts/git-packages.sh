@@ -22,4 +22,14 @@ sudo mkdir -p /lib/terminfo/x
 sudo ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
 cd ..
 
+git clone https://github.com/vivien/i3blocks
+cd i3blocks
+./autogen.sh
+./configure
+make
+sudo make install
+cd ..
+
+git clone https://github.com/vivien/i3blocks-contrib.git
+
 cd ..

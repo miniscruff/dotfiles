@@ -1,3 +1,18 @@
 {
-    "system-packages": "i3"
+    "system-packages": "i3",
+    "git-packages": [
+        {
+            "clone": "https://github.com/vivien/i3blocks",
+            "path": "i3blocks",
+            "commands": [
+                "./autogen.sh",
+                "./configure",
+                "make",
+                "sudo make install"
+            ]
+        },
+        {
+            "clone": "https://github.com/vivien/i3blocks-contrib.git"
+        }
+    ]
 }

@@ -1,0 +1,36 @@
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=$HOME/dotfiles/packages/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=25
+markup=none
+
+[cmus]
+command=$HOME/.config/i3blocks/cmus.sh
+interval=5
+
+[volume-pulseaudio]
+interval=persist
+LONG_FORMAT=${SYMB} ${VOL}%
+AUDIO_HIGH_SYMBOL=
+AUDIO_MED_SYMBOL=奔
+AUDIO_MED_THRESH=60
+AUDIO_LOW_SYMBOL=奄
+AUDIO_LOW_THRESH=30
+SUBSCRIBE=1
+
+[wifi]
+interval=10
+instance=wlp2s0
+label=直 
+min_width=直 100%
+
+[batterybar]
+markup=pango
+interval=30
+min_width=abcde
+
+[date-time]
+command=date +"%a %d %b %Y %H:%M"
+interval=5
