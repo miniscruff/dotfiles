@@ -117,7 +117,7 @@ class Symlinks:
             'cd settings\n\n',
             '\n'.join(dir_lines),
             '\n\n',
-            '\n'.join(links),
+            '\n'.join(sorted(links)),
             '\n\ncd ..'
         ])
 
