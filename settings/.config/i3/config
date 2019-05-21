@@ -144,10 +144,14 @@ bindsym $mod+m exec --no-startup-id amixer -D pulse sset Master toggle && pkill 
 bindsym $mod+equal exec --no-startup-id amixer -D pulse sset Master 5%- && pkill -RTMIN+1
 bindsym $mod+shift+equal exec --no-startup-id amixer -D pulse sset Master 5%+ && pkill -RTMIN+1
 
+# shortcut to notes dmenu
+bindsym $mod+n exec $HOME/.notes/menu.sh
+for_window [title="cheats"] floating enable, resize set 800 500
+
 # startup commands
 exec --no-startup-id feh --bg-fill $HOME/dotfiles/resources/wallpaper.png
 # source .xinitrc for local settings
-exec --no-startuo-id source $HOME/.xinitrc
+exec --no-startup-id source $HOME/.xinitrc
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
