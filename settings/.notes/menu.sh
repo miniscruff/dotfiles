@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 notes_path=.notes
 
 lists=$(ls $notes_path | grep -v menu.sh)
