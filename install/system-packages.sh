@@ -1,6 +1,9 @@
 sudo apt install -y \
+  acpi \
   atool \
+  cmus \
   feh \
+  ffmpeg \
   g++ \
   gnutls-bin \
   gperf \
@@ -27,11 +30,14 @@ sudo apt install -y \
   neofetch \
   neovim \
   poppler-utils \
+  python-mutagen \
   python-openssl \
+  python3-mutagen \
   ranger \
   tk-dev \
   valac \
   w3m \
   xz-utils \
+  youtube-dl \
   zlib1g-dev \
   zsh

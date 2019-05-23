@@ -13,6 +13,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# add scripts to our path
+export PATH="$PATH:$HOME/dotfiles/scripts"
+
 # Functions
 copy () {
     xclip -selection clipboard -i

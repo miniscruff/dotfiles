@@ -1,5 +1,8 @@
 {
-    "system-packages": "i3",
+    "system-packages": [
+        "i3",
+        "acpi"
+    ],
     "git-packages": [
         {
             "clone": "https://github.com/vivien/i3blocks",

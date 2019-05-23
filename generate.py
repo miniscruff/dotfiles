@@ -132,8 +132,8 @@ if __name__ == '__main__':
         Symlinks(),
     ]
 
-    for file in os.listdir('install'):
-        with open('install/' + file) as install_file:
+    for file in os.listdir('templates'):
+        with open('templates/' + file) as install_file:
             print('loading file ', file)
             data = json.load(install_file)
             for key, values in data.items():
@@ -144,6 +144,6 @@ if __name__ == '__main__':
                         handler += values
 
     for handler in handlers:
-        with open(f'scripts/{handler.key}.sh', 'w') as handler_file:
+        with open(f'install/{handler.key}.sh', 'w') as handler_file:
             print('Writing handler ' + handler.__class__.__name__)
             handler_file.write(handler.combine())
