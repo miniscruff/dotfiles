@@ -24,7 +24,6 @@ ln .config/ranger/rc.conf $HOME/.config/ranger/rc.conf
 ln .config/termite/config $HOME/.config/termite/config
 ln .notes/cmus.md $HOME/.notes/cmus.md
 ln .notes/i3.md $HOME/.notes/i3.md
-ln .notes/menu.sh $HOME/.notes/menu.sh
 ln .notes/ranger.md $HOME/.notes/ranger.md
 ln .zshrc $HOME/.zshrc
 

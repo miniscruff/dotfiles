@@ -145,8 +145,8 @@ bindsym $mod+equal exec --no-startup-id amixer -D pulse sset Master 5%- && pkill
 bindsym $mod+shift+equal exec --no-startup-id amixer -D pulse sset Master 5%+ && pkill -RTMIN+1
 
 # shortcut to notes dmenu
-bindsym $mod+n exec $HOME/.notes/menu.sh
-for_window [title="cheats"] floating enable, resize set 800 500
+bindsym $mod+n exec $HOME/dotfiles/scripts/notes.sh
+for_window [title="floating"] floating enable, resize set 800 500
 
 # startup commands
 exec --no-startup-id feh --bg-fill $HOME/dotfiles/resources/wallpaper.png
