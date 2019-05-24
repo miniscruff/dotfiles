@@ -1,7 +1,23 @@
 {
     "system-packages": [
-        "i3",
-        "acpi"
+        "acpi",
+        "libxcb1-dev",
+        "libxcb-keysyms1-dev",
+        "libpango1.0-dev",
+        "libxcb-util0-dev",
+        "libxcb-icccm4-dev",
+        "libyajl-dev",
+        "libstartup-notification0-dev",
+        "libxcb-randr0-dev",
+        "libev-dev",
+        "libxcb-cursor-dev",
+        "libxcb-xinerama0-dev",
+        "libxcb-xkb-dev",
+        "libxkbcommon-dev",
+        "libxkbcommon-x11-dev",
+        "autoconf",
+        "xutils-dev",
+        "libtool"
     ],
     "git-packages": [
         {
@@ -16,6 +32,27 @@
         },
         {
             "clone": "https://github.com/vivien/i3blocks-contrib.git"
+        },
+        {
+            "clone": "https://github.com/Airblader/xcb-util-xrm",
+            "path": "xcb-util-xrm",
+            "commands": [
+                "git submodule update --init",
+                "./autogen.sh --prefix=/usr",
+                "make",
+                "sudo make install"
+            ]
+        },
+        {
+            "clone": "https://www.github.com/Airblader/i3 i3-gaps",
+            "path": "i3-gaps",
+            "commands": [
+                "autoreconf --force --install",
+                "rm -rf build",
+                "./configure --prefix=/usr --sysconfdir=/etc",
+                "make",
+                "sudo make install"
+            ]
         }
     ]
 }

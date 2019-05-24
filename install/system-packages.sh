@@ -1,6 +1,7 @@
 sudo apt install -y \
   acpi \
   atool \
+  autoconf \
   cmus \
   feh \
   ffmpeg \
@@ -9,9 +10,9 @@ sudo apt install -y \
   gperf \
   gtk-doc-tools \
   highlight \
-  i3 \
   intltool \
   libbz2-dev \
+  libev-dev \
   libffi-dev \
   libgirepository1.0-dev \
   libglib3.0-cil-dev \
@@ -20,11 +21,25 @@ sudo apt install -y \
   liblzma-dev \
   libncurses5-dev \
   libncursesw5-dev \
+  libpango1.0-dev \
   libpcre2-dev \
   libreadline-dev \
   libsqlite3-dev \
   libssl-dev \
+  libstartup-notification0-dev \
+  libtool \
+  libxcb-cursor-dev \
+  libxcb-icccm4-dev \
+  libxcb-keysyms1-dev \
+  libxcb-randr0-dev \
+  libxcb-util0-dev \
+  libxcb-xinerama0-dev \
+  libxcb-xkb-dev \
+  libxcb1-dev \
+  libxkbcommon-dev \
+  libxkbcommon-x11-dev \
   libxml2-utils \
+  libyajl-dev \
   llvm \
   mediainfo \
   neofetch \
@@ -37,6 +52,7 @@ sudo apt install -y \
   tk-dev \
   valac \
   w3m \
+  xutils-dev \
   xz-utils \
   youtube-dl \
   zlib1g-dev \
