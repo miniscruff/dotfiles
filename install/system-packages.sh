@@ -32,6 +32,7 @@ sudo apt install -y \
   libxcb-icccm4-dev \
   libxcb-keysyms1-dev \
   libxcb-randr0-dev \
+  libxcb-shape0-dev \
   libxcb-util0-dev \
   libxcb-xinerama0-dev \
   libxcb-xkb-dev \
