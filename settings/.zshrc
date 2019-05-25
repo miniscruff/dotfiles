@@ -13,8 +13,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# add scripts to our path
+# add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Functions
 copy () {

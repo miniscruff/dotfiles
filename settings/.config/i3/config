@@ -107,6 +107,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# turn on and off debug logging
+bindsym $mod+shift+x debuglog on
+bindsym $mod+x shmlog on
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -134,9 +137,6 @@ mode "resize" {
 
 bindsym $mod+z mode "resize"
 
-for_window [class="^.*"] border pixel 1
-focus_follows_mouse no
-
 # Audio settings
 # M toggles mute
 bindsym $mod+m exec --no-startup-id amixer -D pulse sset Master toggle && pkill -RTMIN+1
@@ -150,8 +150,21 @@ for_window [title="floating"] floating enable, resize set 800 500
 
 # startup commands
 exec --no-startup-id feh --bg-fill $HOME/dotfiles/resources/wallpaper.png
-# source .xinitrc for local settings
-exec --no-startup-id source $HOME/.xinitrc
+
+# i3 gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 5
+gaps outer 0
+smart_gaps on
+smart_borders on
+focus_follows_mouse no
+
+# colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #2fd065 #2fd065 #000000 #d02f9a   #2fd065
+client.focused_inactive #16602f #16602f #000000 #16602f   #5f676a
+client.unfocused        #0e3e1e #0e3e1e #888888 #0e3e1e   #222222
+client.urgent           #caee11 #caee11 #000000 #caee11   #caee11
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
