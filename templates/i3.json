@@ -1,6 +1,7 @@
 {
     "system-packages": [
         "i3status",
+        "rofi",
         "suckless-tools",
         "acpi",
         "autoconf",

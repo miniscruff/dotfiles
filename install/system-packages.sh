@@ -51,6 +51,7 @@ sudo apt install -y \
   python-openssl \
   python3-mutagen \
   ranger \
+  rofi \
   suckless-tools \
   tk-dev \
   valac \
