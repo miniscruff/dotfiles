@@ -1,5 +1,7 @@
 {
     "system-packages": [
+        "i3status",
+        "suckless-tools",
         "acpi",
         "autoconf",
         "libxcb1-dev",

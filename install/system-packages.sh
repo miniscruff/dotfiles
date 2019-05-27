@@ -10,6 +10,7 @@ sudo apt install -y \
   gperf \
   gtk-doc-tools \
   highlight \
+  i3status \
   intltool \
   libbz2-dev \
   libev-dev \
@@ -50,11 +51,11 @@ sudo apt install -y \
   python-openssl \
   python3-mutagen \
   ranger \
+  suckless-tools \
   tk-dev \
   valac \
   w3m \
   xutils-dev \
   xz-utils \
-  youtube-dl \
   zlib1g-dev \
   zsh

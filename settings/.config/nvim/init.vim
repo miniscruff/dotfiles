@@ -21,7 +21,7 @@ Plug 'tpope/vim-markdown'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -150,6 +150,20 @@ set completeopt=noinsert,menuone,noselect
 
 let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]
+
+" Disable Jedi-vim autocompletion and enable call-signatures options
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+let g:jedi#use_splits_not_buffers = "top"
+let g:jedi#goto_command = "<leader>sc"
+let g:jedi#goto_assignments_command = "<leader>sa"
+let g:jedi#documentation_command = "<leader>sd"
+let g:jedi#usages_command = "<leader>su"
 
 " Colors
 set termguicolors

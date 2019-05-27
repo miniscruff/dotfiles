@@ -1,9 +1,11 @@
 {
     "system-packages": [
-        "youtube-dl",
         "cmus",
         "ffmpeg",
         "python3-mutagen",
         "python-mutagen"
+    ],
+    "post-install": [
+        "pipx install youtube-dl"
     ]
 }
