@@ -144,6 +144,10 @@ bindsym $mod+m exec --no-startup-id amixer -D pulse sset Master toggle && pkill 
 bindsym $mod+equal exec --no-startup-id amixer -D pulse sset Master 5%- && pkill -RTMIN+1
 bindsym $mod+shift+equal exec --no-startup-id amixer -D pulse sset Master 5%+ && pkill -RTMIN+1
 
+bindsym $mod+u exec --no-startup-id xrandr --output eDP-1 --brightness $(xrandr --current --verbose | grep Brightness | awk '{ print $2+0.05}')
+bindsym $mod+shift+u exec --no-startup-id xrandr --output eDP-1 --brightness $(xrandr --current --verbose | grep Brightness | awk '{ print $2-0.05}')
+bindsym $mod+ctrl+u exec --no-startup-id xrandr --output eDP-1 --brightness 0.5
+
 # shortcut to notes dmenu
 bindsym $mod+n exec $HOME/dotfiles/scripts/notes.sh
 for_window [title="floating"] floating enable, resize set 800 500
