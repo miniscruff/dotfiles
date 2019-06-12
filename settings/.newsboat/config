@@ -1,0 +1,6 @@
+# General
+# -------
+show-keymap-hint yes
+browser firefox
+confirm-exit yes
+display-article-progress yes

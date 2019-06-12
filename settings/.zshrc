@@ -7,6 +7,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# aliases
+alias news="newsboat"
+alias full_shutdown="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo shutdown -h now"
+alias full_restart="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo shutdown -r now"
+
 # User configuration
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -27,6 +32,5 @@ eval "$(ssh-agent -s)"
 ls $HOME/.ssh | \
     grep -v "known_hosts\|.*pub" | \
     xargs -I{} ssh-add $HOME/.ssh/{}
-clear
 
 neofetch

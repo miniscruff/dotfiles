@@ -153,6 +153,7 @@ bindsym $mod+n exec $HOME/dotfiles/scripts/notes.sh
 for_window [title="floating"] floating enable, resize set 800 500
 
 # startup commands
+exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill $HOME/dotfiles/resources/wallpaper.png
 
 # i3 gaps
