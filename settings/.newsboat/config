@@ -1,2 +1,3 @@
 browser firefox
 display-article-progress yes
+bind-key ^O open-all-unread-in-browser-and-mark-read
