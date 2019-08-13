@@ -119,7 +119,7 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
-au BufNewFile,BufRead *.js,*.jsx,*.html,*.css,*.vue
+au BufNewFile,BufRead *.js,*.html,*.css,*.vue,*.yml,*.yaml,*.ts
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
