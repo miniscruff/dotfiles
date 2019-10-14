@@ -62,9 +62,8 @@ nnoremap <leader>gx :Git<space>
 
 nnoremap <leader>mm :silent<space>make\|redraw!\|cc<cr>
 nnoremap <leader>mo :copen<cr>
-nnoremap <leader>mf :set<space>makeprg=flake8<cr>
-nnoremap <leader>mt :vsp term://pytest -x<cr>
-nnoremap <leader>mr :vsp term://flask run<cr>
+
+nnoremap <leader>fd :!pydoc<space>
 
 nnoremap <c-up> <c-w>+
 nnoremap <c-down> <c-w>-
