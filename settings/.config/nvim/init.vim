@@ -21,7 +21,6 @@ Plug 'tpope/vim-markdown'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
-Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -47,11 +46,8 @@ nnoremap <leader>d :g//d<left><left>
 
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gg :Ggrep<space>
-nnoremap <leader>gw :Gwrite<cr>
-nnoremap <leader>gd :Gdelete<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gm :Gmerge<cr>
 nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gu :Gpull<cr>
 nnoremap <leader>gl :Glog<cr>
@@ -62,8 +58,7 @@ nnoremap <leader>gx :Git<space>
 
 nnoremap <leader>mm :silent<space>make\|redraw!\|cc<cr>
 nnoremap <leader>mo :copen<cr>
-
-nnoremap <leader>fd :!pydoc<space>
+nnoremap <leader>mb :!black<space>%<cr>
 
 nnoremap <c-up> <c-w>+
 nnoremap <c-down> <c-w>-
@@ -132,37 +127,11 @@ let python_highlight_all = 1
 let NERDTreeRespectWildIgnore=1
 let g:rainbow_active = 1
 
-" Use K for show documentation in preview window
-nnoremap <silent> <leader>gd :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-autocmd FileType python setlocal completeopt-=preview
-
-set completeopt=noinsert,menuone,noselect
+" autocmd FileType python setlocal completeopt-=preview
+" set completeopt=noinsert,menuone,noselect
 
 let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]
-
-" Disable Jedi-vim autocompletion and enable call-signatures options
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-let g:jedi#use_splits_not_buffers = "top"
-let g:jedi#goto_command = "<leader>sc"
-let g:jedi#goto_assignments_command = "<leader>sa"
-let g:jedi#documentation_command = "<leader>sd"
-let g:jedi#usages_command = "<leader>su"
 
 " Colors
 set termguicolors
