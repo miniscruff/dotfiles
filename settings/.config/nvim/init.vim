@@ -21,6 +21,7 @@ Plug 'tpope/vim-markdown'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -44,21 +45,16 @@ nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>r :%s//g<left><left>
 nnoremap <leader>d :g//d<left><left>
 
-nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gst :Gstatus<cr>
 nnoremap <leader>gg :Ggrep<space>
-nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gp :Gpush<cr>
-nnoremap <leader>gu :Gpull<cr>
-nnoremap <leader>gl :Glog<cr>
-nnoremap <leader>ga :Git<space>add<space>-v<space>.<cr>
-nnoremap <leader>go :Git<space>checkout<space>
-nnoremap <leader>gb :Git<space>checkout<space>-b<space>
-nnoremap <leader>gx :Git<space>
+nnoremap <leader>gl :Gpull<cr>
 
 nnoremap <leader>mm :silent<space>make\|redraw!\|cc<cr>
 nnoremap <leader>mo :copen<cr>
 nnoremap <leader>mb :!black<space>%<cr>
+nnoremap <silent> <buffer> gd <Plug>(kite-docs)
 
 nnoremap <c-up> <c-w>+
 nnoremap <c-down> <c-w>-
@@ -85,7 +81,7 @@ set rnu
 set nu
 set noswapfile
 set enc=utf-8
-set wildignore+=venv,*__pycache__*,*.swp,*.exe,*.pyc,*/tmp*,node_modules,*.db
+set wildignore+=venv,*__pycache__*,*.swp,*.exe,*.pyc,*/tmp*,node_modules,*.db,*egg-info,*wheel-metadata
 set clipboard+=unnamed
 set nowrap
 set showmatch
@@ -126,9 +122,6 @@ au BufNewFile,BufRead *.rst
 let python_highlight_all = 1
 let NERDTreeRespectWildIgnore=1
 let g:rainbow_active = 1
-
-" autocmd FileType python setlocal completeopt-=preview
-" set completeopt=noinsert,menuone,noselect
 
 let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]

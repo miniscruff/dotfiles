@@ -9,7 +9,6 @@ mkdir $HOME/.config/ranger
 mkdir $HOME/.config/rofi
 mkdir $HOME/.config/termite
 mkdir $HOME/.fonts
-mkdir $HOME/.newsboat
 mkdir $HOME/.notes
 
 ln ".fonts/Hack Bold Italic Nerd Font Complete Mono.ttf" "$HOME/.fonts/Hack Bold Italic Nerd Font Complete Mono.ttf"
@@ -26,8 +25,6 @@ ln .config/ranger/rc.conf $HOME/.config/ranger/rc.conf
 ln .config/rofi/config $HOME/.config/rofi/config
 ln .config/rofi/flat-orange.rasi $HOME/.config/rofi/flat-orange.rasi
 ln .config/termite/config $HOME/.config/termite/config
-ln .newsboat/config $HOME/.newsboat/config
-ln .newsboat/urls $HOME/.newsboat/urls
 ln .notes/cmus.md $HOME/.notes/cmus.md
 ln .notes/i3.md $HOME/.notes/i3.md
 ln .notes/ranger.md $HOME/.notes/ranger.md

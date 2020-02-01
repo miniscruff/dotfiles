@@ -8,7 +8,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-alias news="newsboat"
 alias full_shutdown="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo shutdown -h now"
 alias full_restart="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo shutdown -r now"
 

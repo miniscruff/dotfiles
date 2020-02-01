@@ -46,7 +46,6 @@ sudo apt install -y \
   mediainfo \
   neofetch \
   neovim \
-  newsboat \
   poppler-utils \
   python-mutagen \
   python-openssl \
