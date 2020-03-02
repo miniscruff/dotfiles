@@ -1,4 +1,10 @@
 #!/bin/bash
+# in order to use create a txt file with lines of songs
+# where each line is space separated youtube code, artist, song name
+# such as:
+# CYDP_8UTAus Neffex "Fight Back"
+# then run this script using the file:
+# music-dl.sh < music.txt
 
 while IFS= read -r line; do
     set --                                   # clear the argument list
@@ -19,3 +25,5 @@ while IFS= read -r line; do
             "$url"
     fi
 done
+
+echo Done
