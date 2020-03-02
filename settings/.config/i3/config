@@ -148,9 +148,8 @@ bindsym $mod+u exec --no-startup-id xrandr --output eDP-1 --brightness $(xrandr 
 bindsym $mod+shift+u exec --no-startup-id xrandr --output eDP-1 --brightness $(xrandr --current --verbose | grep Brightness | awk '{ print $2-0.05}')
 bindsym $mod+ctrl+u exec --no-startup-id xrandr --output eDP-1 --brightness 0.5
 
-# shortcut to notes dmenu
+# shortcuts to scripts
 bindsym $mod+q exec $HOME/dotfiles/scripts/projects.sh
-bindsym $mod+n exec $HOME/dotfiles/scripts/notes.sh
 for_window [title="floating"] floating enable, resize set 800 500
 
 # startup commands
