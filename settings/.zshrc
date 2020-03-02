@@ -33,3 +33,10 @@ ls $HOME/.ssh | \
     xargs -I{} ssh-add $HOME/.ssh/{}
 
 neofetch
+
+# will load the file on start, usually an init file
+if [[ $1 == file ]]
+then
+    source "$2"
+set --
+fi
