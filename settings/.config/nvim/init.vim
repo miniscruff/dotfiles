@@ -12,10 +12,8 @@ Plug 'morhetz/gruvbox'
 " Python
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Javascript
-Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'mxw/vim-jsx'
 " Misc
 Plug 'tpope/vim-markdown'
 Plug 'hail2u/vim-css3-syntax'
@@ -48,10 +46,7 @@ nnoremap <leader>d :g//d<left><left>
 nnoremap <leader>gst :Gstatus<cr>
 nnoremap <leader>gg :Ggrep<space>
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gp :Gpush<cr>
-nnoremap <leader>gl :Gpull<cr>
 
-nnoremap <leader>mm :silent<space>make\|redraw!\|cc<cr>
 nnoremap <leader>mo :copen<cr>
 nnoremap <leader>mb :!black<space>%<cr>
 nnoremap <silent> <buffer> gd <Plug>(kite-docs)
