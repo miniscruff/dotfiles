@@ -49,4 +49,6 @@ make
 sudo make install
 cd ..
 
+git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm
+
 cd ..

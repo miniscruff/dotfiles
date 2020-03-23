@@ -7,15 +7,15 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# aliases
-alias full_shutdown="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo shutdown -h now"
-alias full_restart="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo shutdown -r now"
-
 # User configuration
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"  # This loads nvm
+source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"
