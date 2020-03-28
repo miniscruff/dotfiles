@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Python
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Javascript
@@ -20,6 +21,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
 Plug 'cespare/vim-toml'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -49,7 +51,6 @@ nnoremap <leader>gd :Gdiff<cr>
 
 nnoremap <leader>mo :copen<cr>
 nnoremap <leader>mb :!black<space>%<cr>
-nnoremap <silent> <buffer> gd <Plug>(kite-docs)
 
 nnoremap <c-up> <c-w>+
 nnoremap <c-down> <c-w>-
