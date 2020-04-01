@@ -4,4 +4,3 @@ qmk setup miniscruff/qmk_firmware ./packages/qmk_firmware --branch miniscruff -y
 pip install jedi neovim
 pipx install httpie poetry
 nvim --headless +PlugInstall +qa
-pipx install youtube-dl

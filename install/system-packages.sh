@@ -3,9 +3,7 @@ sudo apt install -y \
   atool \
   autoconf \
   avrdude \
-  cmus \
   feh \
-  ffmpeg \
   g++ \
   gnutls-bin \
   gperf \
@@ -48,9 +46,7 @@ sudo apt install -y \
   neofetch \
   neovim \
   poppler-utils \
-  python-mutagen \
   python-openssl \
-  python3-mutagen \
   ranger \
   rofi \
   suckless-tools \

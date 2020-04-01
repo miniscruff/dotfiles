@@ -6,10 +6,6 @@ command=$HOME/dotfiles/packages/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
-[cmus]
-command=$HOME/.config/i3blocks/cmus.sh
-interval=5
-
 [volume-pulseaudio]
 interval=persist
 LONG_FORMAT=${SYMB} ${VOL}%
