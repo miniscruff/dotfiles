@@ -138,11 +138,9 @@ mode "resize" {
 bindsym $mod+z mode "resize"
 
 # Audio settings
-# M toggles mute
 bindsym $mod+m exec --no-startup-id amixer -D pulse sset Master toggle && pkill -RTMIN+1
-# equal / plus = lower / raise volume
-bindsym $mod+equal exec --no-startup-id amixer -D pulse sset Master 5%- && pkill -RTMIN+1
-bindsym $mod+shift+equal exec --no-startup-id amixer -D pulse sset Master 5%+ && pkill -RTMIN+1
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && pkill -RTMIN+1
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && pkill -RTMIN+1
 
 bindsym $mod+u exec --no-startup-id xrandr --output eDP-1 --brightness $(xrandr --current --verbose | grep Brightness | awk '{ print $2+0.05}')
 bindsym $mod+shift+u exec --no-startup-id xrandr --output eDP-1 --brightness $(xrandr --current --verbose | grep Brightness | awk '{ print $2-0.05}')
