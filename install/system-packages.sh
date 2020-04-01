@@ -2,6 +2,7 @@ sudo apt install -y \
   acpi \
   atool \
   autoconf \
+  avrdude \
   cmus \
   feh \
   ffmpeg \

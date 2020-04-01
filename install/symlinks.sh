@@ -5,6 +5,7 @@ mkdir $HOME/.config/i3
 mkdir $HOME/.config/i3blocks
 mkdir $HOME/.config/neofetch
 mkdir $HOME/.config/nvim
+mkdir $HOME/.config/qmk
 mkdir $HOME/.config/ranger
 mkdir $HOME/.config/rofi
 mkdir $HOME/.config/termite
@@ -20,6 +21,7 @@ ln .config/i3blocks/cmus.sh $HOME/.config/i3blocks/cmus.sh
 ln .config/i3blocks/config $HOME/.config/i3blocks/config
 ln .config/neofetch/config.conf $HOME/.config/neofetch/config.conf
 ln .config/nvim/init.vim $HOME/.config/nvim/init.vim
+ln .config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln .config/ranger/rc.conf $HOME/.config/ranger/rc.conf
 ln .config/rofi/config $HOME/.config/rofi/config
 ln .config/rofi/flat-orange.rasi $HOME/.config/rofi/flat-orange.rasi

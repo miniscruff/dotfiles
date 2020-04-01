@@ -8,6 +8,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export QMK_HOME="$HOME/dotfiles/packages/qmk_firmware"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
