@@ -1,4 +1,4 @@
 rofi.theme: flat-orange.rasi
 rofi.font: Hack 12
 rofi.modi: combi
-rofi.combi-modi: window,drun
+rofi.combi-modi: window,drun,run
