@@ -21,6 +21,7 @@ source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/go/bin"
 
 # Functions
 copy () {

@@ -10,11 +10,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Python
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Misc
 Plug 'tpope/vim-markdown'
 Plug 'hail2u/vim-css3-syntax'
@@ -45,12 +45,8 @@ nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>r :%s//g<left><left>
 nnoremap <leader>d :g//d<left><left>
 
-nnoremap <leader>gst :Gstatus<cr>
-nnoremap <leader>gg :Ggrep<space>
-nnoremap <leader>gd :Gdiff<cr>
-
 nnoremap <leader>mo :copen<cr>
-nnoremap <leader>mb :!black<space>%<cr>
+autocmd FileType py nnoremap <leader>mb :!black<space>%<cr>
 
 nnoremap <c-up> <c-w>+
 nnoremap <c-down> <c-w>-
@@ -115,12 +111,29 @@ au BufNewFile,BufRead *.rst
     \ set softtabstop=3 |
     \ set shiftwidth=3
 
-let python_highlight_all = 1
+au BufNewFile,BufRead *.go
+    \ set noexpandtab
+
+" Misc plugins
 let NERDTreeRespectWildIgnore=1
 let g:rainbow_active = 1
 
+" Pythong
+let python_highlight_all = 1
 let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]
+
+" Go
+autocmd FileType go nnoremap <leader>mb <Plug>(go-build)
+autocmd FileType go nnoremap <leader>mr <Plug>(go-run)
+autocmd FileType go nnoremap <leader>mt <Plug>(go-test)
+autocmd FileType go nnoremap <leader>mc <Plug>(go-coverage-toggle)
+autocmd FileType go nnoremap <leader>gd :GoDoc<cr>
+autocmd FileType go nnoremap <leader>gf :GoDef<cr>
+autocmd FileType go nnoremap <leader>gr :GoRename<space>
+autocmd FileType go nnoremap <leader>gi :GoImport<space>
+autocmd FileType go nnoremap <leader>gp :GoDrop<space>
+autocmd FileType go nnoremap <leader>gl :GoLint<cr>
 
 " Colors
 set termguicolors
@@ -129,8 +142,11 @@ let g:gruvbox_number_column = 'bg1'
 let g:gruvbox_color_column = 'purple'
 let g:gruvbox_vert_split = 'blue'
 colorscheme gruvbox
+hi User1 ctermfg=007 ctermbg=239 guibg=#32302f guifg=#8ec07c
+hi User2 ctermfg=236 ctermbg=236 guibg=#504945 guifg=#d5c4a1
 set background=dark
 
+" status line
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
@@ -145,9 +161,6 @@ set statusline+=%1*%{GitInfo()}
 set statusline+=%2*\ %f%m%r%h%w
 set statusline+=%=
 set statusline+=\ %l/%L\ :\ %c
-
-hi User1 ctermfg=007 ctermbg=239 guibg=#32302f guifg=#8ec07c
-hi User2 ctermfg=236 ctermbg=236 guibg=#504945 guifg=#d5c4a1
 
 " display tabs and trailing whitespace
 exec "set listchars=tab:\uBB\uBB,trail:\uD7,nbsp:~"

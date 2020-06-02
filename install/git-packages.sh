@@ -3,8 +3,6 @@ cd packages
 
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 
-git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
-
 git clone https://github.com/thestinger/vte-ng.git
 cd vte-ng
 echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH"
@@ -48,6 +46,8 @@ rm -rf build
 make
 sudo make install
 cd ..
+
+git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
 
 git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm
 

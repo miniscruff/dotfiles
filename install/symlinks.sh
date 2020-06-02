@@ -23,7 +23,6 @@ ln .config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln .config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln .config/ranger/rc.conf $HOME/.config/ranger/rc.conf
 ln .config/rofi/config $HOME/.config/rofi/config
-ln .config/rofi/flat-orange.rasi $HOME/.config/rofi/flat-orange.rasi
 ln .config/termite/config $HOME/.config/termite/config
 ln .gitignore $HOME/.gitignore
 ln .zshrc $HOME/.zshrc
