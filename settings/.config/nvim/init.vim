@@ -124,10 +124,10 @@ let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]
 
 " Go
-autocmd FileType go nnoremap <leader>mb <Plug>(go-build)
-autocmd FileType go nnoremap <leader>mr <Plug>(go-run)
-autocmd FileType go nnoremap <leader>mt <Plug>(go-test)
-autocmd FileType go nnoremap <leader>mc <Plug>(go-coverage-toggle)
+autocmd FileType go nnoremap <leader>mb :GoBuild<cr>
+autocmd FileType go nnoremap <leader>mr :GoRun<cr>
+autocmd FileType go nnoremap <leader>mt :GoTest<cr>
+autocmd FileType go nnoremap <leader>mc :GoCoverageToggle<cr>
 autocmd FileType go nnoremap <leader>gd :GoDoc<cr>
 autocmd FileType go nnoremap <leader>gf :GoDef<cr>
 autocmd FileType go nnoremap <leader>gr :GoRename<space>
