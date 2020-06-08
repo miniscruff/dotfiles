@@ -103,15 +103,15 @@ class Symlinks:
                     dirs.add(parent_folder)
 
                 if ' ' in link_path:
-                    links.append(f'ln "{link_path}" "$HOME/{link_path}"')
+                    links.append(f'ln -f "{link_path}" "$HOME/{link_path}"')
                 else:
-                    links.append(f'ln {link_path} $HOME/{link_path}')
+                    links.append(f'ln -f {link_path} $HOME/{link_path}')
 
         dir_lines = []
         for dir in sorted(dirs):
             if ' ' in dir:
                 dir = f'"{dir}"'
-            dir_lines.append(f'mkdir $HOME/{dir}')
+            dir_lines.append(f'mkdir -p $HOME/{dir}')
 
         return ''.join([
             'cd settings\n\n',

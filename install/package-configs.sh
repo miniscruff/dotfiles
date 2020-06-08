@@ -1,4 +1,7 @@
 chsh -s $(which zsh)
+wget -O go.tar.gz https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
+tar -C ${HOME}/.local/bin -xvf go.tar.gz
+rm -f go.tar.gz
 curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
