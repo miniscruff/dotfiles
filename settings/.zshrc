@@ -3,6 +3,9 @@ ZSH_THEME="avit"
 
 plugins=(
   git
+  kubectl
+  nvm
+  golang
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -15,8 +18,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
-source "$NVM_DIR/nvm.sh"  # This loads nvm
-source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source "$NVM_DIR/nvm.sh"
+source "$NVM_DIR/bash_completion"
 
 # add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"
@@ -31,7 +34,7 @@ copy () {
 # Configure ssh keys
 eval "$(ssh-agent -s)"
 ls $HOME/.ssh | \
-    grep -v "known_hosts\|.*pub" | \
+    grep -v "known_hosts\|.*pub\|authorized" | \
     xargs -I{} ssh-add $HOME/.ssh/{}
 
 neofetch
