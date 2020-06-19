@@ -1,6 +1,5 @@
-export ZSH="$HOME/.oh-my-zsh"
+# zsh stuff
 ZSH_THEME="avit"
-
 plugins=(
   git
   kubectl
@@ -8,6 +7,8 @@ plugins=(
   nvm
 )
 
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CACHE_DIR=$HOME/.cache
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
