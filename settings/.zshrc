@@ -4,8 +4,8 @@ ZSH_THEME="avit"
 plugins=(
   git
   kubectl
-  nvm
   golang
+  nvm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -15,11 +15,13 @@ export EDITOR=nvim
 export QMK_HOME="$HOME/dotfiles/packages/qmk_firmware"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export GVM_HOME="$HOME/.gvm"
 eval "$(pyenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 source "$NVM_DIR/nvm.sh"
 source "$NVM_DIR/bash_completion"
+source "$GVM_HOME/scripts/gvm"
 
 # add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"

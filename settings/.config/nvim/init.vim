@@ -74,7 +74,7 @@ set nu
 set noswapfile
 set enc=utf-8
 set wildignore+=venv,*__pycache__*,*.swp,*.exe,*.pyc,*/tmp*,node_modules,*.db,*egg-info,*wheel-metadata
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 set nowrap
 set showmatch
 set showcmd

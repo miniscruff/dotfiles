@@ -2,7 +2,7 @@
 # to use add to i3 bindings
 # can alter project path or init file below
 projects_path=$HOME/projects
-init_file=init.sh
+init_file=".init.sh"
 select=$(ls "$projects_path" | rofi -dmenu -i -p "Projects")
 
 if [ -z "$select" ]; then
