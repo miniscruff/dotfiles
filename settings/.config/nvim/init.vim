@@ -10,17 +10,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Javascript
-Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" COC plugins to install:
+" coc-tsserver coc-go coc-css coc-html coc-yaml coc-json
+" Languages
+Plug 'sheerun/vim-polyglot'
 " Misc
-Plug 'tpope/vim-markdown'
-Plug 'hail2u/vim-css3-syntax'
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
-Plug 'cespare/vim-toml'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -101,7 +97,7 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
-au BufNewFile,BufRead *.js,*.html,*.css,*.vue,*.yml,*.yaml,*.ts
+au BufNewFile,BufRead *.js,*.html,*.css,*.vue,*.yml,*.yaml,*.ts,*.json,*.tsx
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
@@ -122,18 +118,6 @@ let g:rainbow_active = 1
 let python_highlight_all = 1
 let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]
-
-" Go
-autocmd FileType go nnoremap <leader>mb :GoBuild<cr>
-autocmd FileType go nnoremap <leader>mr :GoRun<cr>
-autocmd FileType go nnoremap <leader>mt :GoTest<cr>
-autocmd FileType go nnoremap <leader>mc :GoCoverageToggle<cr>
-autocmd FileType go nnoremap <leader>gd :GoDoc<cr>
-autocmd FileType go nnoremap <leader>gf :GoDef<cr>
-autocmd FileType go nnoremap <leader>gr :GoRename<space>
-autocmd FileType go nnoremap <leader>gi :GoImport<space>
-autocmd FileType go nnoremap <leader>gp :GoDrop<space>
-autocmd FileType go nnoremap <leader>gl :GoLint<cr>
 
 " Colors
 set termguicolors
