@@ -9,11 +9,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " COC plugins to install:
-" coc-tsserver coc-go coc-css coc-html coc-yaml coc-json
+" :CocInstall coc-tsserver coc-go coc-css coc-html coc-yaml coc-json
 " Languages
 Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go'
 " Misc
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
@@ -43,6 +45,8 @@ nnoremap <leader>d :g//d<left><left>
 
 nnoremap <leader>mo :copen<cr>
 autocmd FileType py nnoremap <leader>mb :!black<space>%<cr>
+
+nnoremap <leader>gg :Ggrep<space>
 
 nnoremap <c-up> <c-w>+
 nnoremap <c-down> <c-w>-
