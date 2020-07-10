@@ -44,7 +44,6 @@ nnoremap <leader>r :%s//g<left><left>
 nnoremap <leader>d :g//d<left><left>
 
 nnoremap <leader>mo :copen<cr>
-autocmd FileType py nnoremap <leader>mb :!black<space>%<cr>
 
 nnoremap <leader>gg :Ggrep<space>
 
@@ -118,10 +117,16 @@ au BufNewFile,BufRead *.go
 let NERDTreeRespectWildIgnore=1
 let g:rainbow_active = 1
 
-" Pythong
+" Python
 let python_highlight_all = 1
 let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]
+
+" Go
+let g:go_doc_popup_window = 1
+let g:go_def_mapping = 0
+let g:go_auto_sameids = 1
+let g:go_highlight_trailing_whitespace_error = 1
 
 " Colors
 set termguicolors
