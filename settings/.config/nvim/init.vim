@@ -46,6 +46,8 @@ nnoremap <leader>d :g//d<left><left>
 nnoremap <leader>mo :copen<cr>
 
 nnoremap <leader>gg :Ggrep<space>
+" grep word will yank and ggrep the next word
+nnoremap <leader>gw yw:Ggrep<space><C-r>"<cr>
 
 nnoremap <c-up> <c-w>+
 nnoremap <c-down> <c-w>-
@@ -54,6 +56,7 @@ nnoremap <c-right> <c-w><
 nnoremap <c-j> :<c-u>exe ":m.+".v:count1<cr>
 nnoremap <c-k> :<c-u>exe ":m.-".(v:count1+1)<cr>
 nnoremap <c-l> J$
+nnoremap <c-n> :cn<cr>
 
 map ^ <nop>
 map { <nop>
@@ -127,6 +130,9 @@ let g:go_doc_popup_window = 1
 let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
 let g:go_auto_sameids = 0
+let g:go_metalinter_enabled = []
+let g:go_metalinter_autosave_enabled = []
+" let g:go_metalinter_command = 'golangci-lint'
 let g:go_highlight_trailing_whitespace_error = 1
 let g:go_test_show_name = 1
 let g:go_auto_type_info = 1
@@ -134,7 +140,7 @@ au FileType go nnoremap <leader>gd :GoDoc<cr>
 au FileType go nnoremap <leader>gf :GoDef<cr>
 au FileType go nnoremap <leader>ga :GoAlt<cr>
 au FileType go nnoremap <leader>gi :GoImport<space>
-au FileType go nnoremap <leader>gl :GoLint<cr>
+au FileType go nnoremap <leader>gl :GoMetaLinter<cr>
 au FileType go nnoremap <leader>ge :GoErrCheck<cr>
 au FileType go nnoremap <leader>gt :GoTest<cr>
 au FileType go nnoremap <leader>gb :GoBuild<cr>
