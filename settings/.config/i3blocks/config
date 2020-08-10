@@ -6,6 +6,10 @@ command=$HOME/dotfiles/packages/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=6000
+
 [volume-pulseaudio]
 interval=persist
 LONG_FORMAT=${SYMB} ${VOL}%
@@ -18,7 +22,7 @@ SUBSCRIBE=1
 
 [wifi]
 interval=10
-instance=wlp2s0
+interface=wlp111s0
 label=直 
 min_width=直 100%
 
