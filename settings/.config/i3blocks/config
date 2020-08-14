@@ -6,6 +6,10 @@ command=$HOME/dotfiles/packages/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
+[music]
+command=$HOME/dotfiles/scripts/music-bar.sh
+interval=10
+
 [weather]
 command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 interval=6000

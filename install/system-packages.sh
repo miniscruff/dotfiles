@@ -53,6 +53,7 @@ sudo apt install -y \
   tk-dev \
   valac \
   w3m \
+  xdotool \
   xutils-dev \
   xz-utils \
   zlib1g-dev \

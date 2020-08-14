@@ -22,7 +22,8 @@
         "libpango1.0-dev",
         "libstartup-notification0-dev",
         "xutils-dev",
-        "libtool"
+        "libtool",
+        "xdotool"
     ],
     "git-packages": [
         {
