@@ -19,7 +19,6 @@ Plug 'fatih/vim-go'
 " Misc
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -102,6 +101,7 @@ set nowritebackup
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
+set noshowmode
 
 au BufNewFile,BufRead *.js,*.html,*.css,*.vue,*.yml,*.yaml,*.ts,*.json,*.tsx
     \ set tabstop=2 |
@@ -132,7 +132,6 @@ let g:go_doc_keywordprg_enabled = 0
 let g:go_auto_sameids = 0
 let g:go_metalinter_enabled = []
 let g:go_metalinter_autosave_enabled = []
-" let g:go_metalinter_command = 'golangci-lint'
 let g:go_highlight_trailing_whitespace_error = 1
 let g:go_test_show_name = 1
 let g:go_auto_type_info = 1
@@ -147,17 +146,15 @@ au FileType go nnoremap <leader>gb :GoBuild<cr>
 au FileType go nnoremap <leader>gr :GoRun<cr>
 
 " Colors
+set background=dark
 set termguicolors
 let g:gruvbox_contrast_dark = 'dark'
 let g:gruvbox_number_column = 'bg1'
 let g:gruvbox_color_column = 'purple'
 let g:gruvbox_vert_split = 'blue'
 colorscheme gruvbox
-hi User1 ctermfg=007 ctermbg=239 guibg=#32302f guifg=#8ec07c
-hi User2 ctermfg=236 ctermbg=236 guibg=#504945 guifg=#d5c4a1
-set background=dark
 
-" status line
+" Git Branch
 function! GitInfo()
   let git = fugitive#head()
   if git != ''
@@ -166,12 +163,40 @@ function! GitInfo()
     return ''
 endfunction
 
+" Status Line
 set laststatus=2
 set statusline=
-set statusline+=%1*%{GitInfo()}
-set statusline+=%2*\ %f%m%r%h%w
-set statusline+=%=
-set statusline+=\ %l/%L\ :\ %c
+set statusline+=%1*\ %{GitInfo()}\         " Git branch
+set statusline+=%0*\ %f%m%r%h%w            " File path and modified
+set statusline+=%=                         " Right side
+set statusline+=%2*\ %l/%L\ :%c\           " line number / total lines
+set statusline+=%3*\ %{StatuslineMode()}\  " Current mode
+hi User1 ctermbg=black ctermfg=green guibg=#303030 guifg=green
+hi User2 ctermbg=black ctermfg=white guibg=#303030 guifg=white
+hi User3 guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
+au InsertEnter * hi User3 guifg=black guibg=#d7afff ctermfg=black ctermbg=magenta
+au InsertLeave * hi User3 guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
+
+function! StatuslineMode()
+  let l:mode=mode()
+  if l:mode==#"n"
+    return "NORMAL"
+  elseif l:mode==?"v"
+    return "VISUAL"
+  elseif l:mode==#"i"
+    return "INSERT"
+  elseif l:mode==#"R"
+    return "REPLACE"
+  elseif l:mode==?"s"
+    return "SELECT"
+  elseif l:mode==#"t"
+    return "TERMINAL"
+  elseif l:mode==#"c"
+    return "COMMAND"
+  elseif l:mode==#"!"
+    return "SHELL"
+  endif
+endfunction
 
 " display tabs and trailing whitespace
 exec "set listchars=tab:\uBB\uBB,trail:\uD7,nbsp:~"
