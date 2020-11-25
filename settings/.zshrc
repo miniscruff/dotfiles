@@ -34,6 +34,10 @@ copy () {
     xclip -selection clipboard -i
 }
 
+brightness () {
+    xrandr | grep " connected" | awk '{print $1}' | xargs -l -i xrandr --output {} --brightness $1
+}
+
 # Configure ssh keys
 eval "$(ssh-agent -s)"
 ls $HOME/.ssh | \
