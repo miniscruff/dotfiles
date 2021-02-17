@@ -5,6 +5,7 @@ plugins=(
   kubectl
   golang
   nvm
+  aws
 )
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -28,6 +29,7 @@ source "$GVM_HOME/scripts/gvm"
 export PATH="$PATH:$HOME/dotfiles/scripts"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/go/bin"
+export GPG_TTY=$TTY
 
 # Functions
 copy () {
