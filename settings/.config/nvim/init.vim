@@ -11,6 +11,10 @@ Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'heavenshell/vim-jsdoc', {
+    \ 'for': ['javascript', 'javascript.jsx','typescript'],
+    \ 'do': 'make install'
+\}
 " COC plugins to install:
 " :CocInstall coc-tsserver coc-go coc-css coc-html coc-yaml coc-json
 " Languages
@@ -144,6 +148,24 @@ au FileType go nnoremap <leader>ge :GoErrCheck<cr>
 au FileType go nnoremap <leader>gt :GoTest<cr>
 au FileType go nnoremap <leader>gb :GoBuild<cr>
 au FileType go nnoremap <leader>gr :GoRun<cr>
+
+" coc settings
+" GoTo code navigation.
+nmap <silent> <leader>gf <Plug>(coc-definition)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 
 " Colors
 set background=dark
