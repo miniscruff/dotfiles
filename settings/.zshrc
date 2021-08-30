@@ -5,7 +5,6 @@ plugins=(
   kubectl
   golang
   nvm
-  aws
 )
 
 export ZSH="$HOME/.oh-my-zsh"
