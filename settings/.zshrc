@@ -2,7 +2,6 @@
 ZSH_THEME="avit"
 plugins=(
   git
-  kubectl
   golang
   nvm
 )
@@ -44,6 +43,11 @@ copy () {
 
 brightness () {
     xrandr | grep " connected" | awk '{print $1}' | xargs -l -i xrandr --output {} --brightness $1
+}
+
+kubectl_complete () {
+    alias k=kubectl
+    source <(kubectl completion zsh)
 }
 
 # Configure ssh keys
