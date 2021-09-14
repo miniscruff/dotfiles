@@ -14,3 +14,4 @@ pip install pipx
 export NVM_HOME="$HOME/.nvm"
 source $HOME/.nvm/nvm.sh
 nvm install node
+npm install -g dockerfile-language-server-nodejs

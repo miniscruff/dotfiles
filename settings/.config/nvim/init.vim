@@ -11,12 +11,13 @@ Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" :CocInstall coc-tsserver coc-go coc-css coc-html coc-yaml coc-json
+
 Plug 'heavenshell/vim-jsdoc', {
     \ 'for': ['javascript', 'javascript.jsx','typescript'],
     \ 'do': 'make install'
 \}
-" COC plugins to install:
-" :CocInstall coc-tsserver coc-go coc-css coc-html coc-yaml coc-json
+
 " Languages
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
