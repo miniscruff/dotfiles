@@ -56,8 +56,6 @@ ls $HOME/.ssh | \
     grep -v "known_hosts\|.*pub\|authorized" | \
     xargs -I{} ssh-add $HOME/.ssh/{}
 
-neofetch
-
 # will load the file on start, usually an init file
 if [[ $1 == file ]]
 then
