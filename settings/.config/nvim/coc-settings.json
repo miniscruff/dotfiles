@@ -1,4 +1,9 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "json",
+    "js"
+  ],
   "languageserver": {
     "go": {
       "command": "gopls",

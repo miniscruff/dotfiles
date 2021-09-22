@@ -20,7 +20,7 @@ Plug 'heavenshell/vim-jsdoc', {
 
 " Languages
 Plug 'sheerun/vim-polyglot'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go' " try coc-go
 " Misc
 Plug 'luochen1990/rainbow'
 Plug 'inside/vim-search-pulse'
@@ -131,31 +131,33 @@ let g:python_host_prog = systemlist('which python')[0]
 let g:python3_host_prog = systemlist('which python3')[0]
 
 " Go
-let g:go_doc_popup_window = 1
-let g:go_def_mapping_enabled = 0
-let g:go_doc_keywordprg_enabled = 0
-let g:go_auto_sameids = 0
-let g:go_metalinter_enabled = []
-let g:go_metalinter_autosave_enabled = []
-let g:go_highlight_trailing_whitespace_error = 1
-let g:go_test_show_name = 1
-let g:go_auto_type_info = 1
-au FileType go nnoremap <leader>gd :GoDoc<cr>
-au FileType go nnoremap <leader>gf :GoDef<cr>
-au FileType go nnoremap <leader>ga :GoAlt<cr>
-au FileType go nnoremap <leader>gi :GoImport<space>
-au FileType go nnoremap <leader>gl :GoMetaLinter<cr>
-au FileType go nnoremap <leader>ge :GoErrCheck<cr>
-au FileType go nnoremap <leader>gt :GoTest<cr>
-au FileType go nnoremap <leader>gb :GoBuild<cr>
-au FileType go nnoremap <leader>gr :GoRun<cr>
+" let g:go_doc_popup_window = 1
+" let g:go_def_mapping_enabled = 0
+" let g:go_doc_keywordprg_enabled = 0
+" let g:go_auto_sameids = 0
+" let g:go_metalinter_enabled = []
+" let g:go_metalinter_autosave_enabled = []
+" let g:go_highlight_trailing_whitespace_error = 1
+" let g:go_test_show_name = 1
+" let g:go_auto_type_info = 1
+" au FileType go nnoremap <leader>gd :GoDoc<cr>
+" au FileType go nnoremap <leader>gf :GoDef<cr>
+" au FileType go nnoremap <leader>ga :GoAlt<cr>
+" au FileType go nnoremap <leader>gi :GoImport<space>
+" au FileType go nnoremap <leader>gl :GoMetaLinter<cr>
+" au FileType go nnoremap <leader>ge :GoErrCheck<cr>
+" au FileType go nnoremap <leader>gt :GoTest<cr>
+" au FileType go nnoremap <leader>gb :GoBuild<cr>
+" au FileType go nnoremap <leader>gr :GoRun<cr>
 
 " coc settings
 " GoTo code navigation.
 nmap <silent> <leader>gf <Plug>(coc-definition)
-nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader><up> <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader><down> <Plug>(coc-diagnostic-next)
 
 nnoremap <silent> <c-space> :call <SID>show_documentation()<CR>
 function! s:show_documentation()
