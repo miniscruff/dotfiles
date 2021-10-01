@@ -3,26 +3,19 @@ sudo apt install -y \
   atool \
   autoconf \
   avrdude \
+  cmake \
   feh \
-  g++ \
-  gnutls-bin \
-  gperf \
-  gtk-doc-tools \
   highlight \
   i3status \
-  intltool \
   libbz2-dev \
   libev-dev \
   libffi-dev \
-  libgirepository1.0-dev \
-  libglib3.0-cil-dev \
-  libgnutls28-dev \
-  libgtk-3-dev \
+  libfontconfig1-dev \
+  libfreetype6-dev \
   liblzma-dev \
   libncurses5-dev \
   libncursesw5-dev \
   libpango1.0-dev \
-  libpcre2-dev \
   libreadline-dev \
   libsqlite3-dev \
   libssl-dev \
@@ -34,24 +27,24 @@ sudo apt install -y \
   libxcb-randr0-dev \
   libxcb-shape0-dev \
   libxcb-util0-dev \
+  libxcb-xfixes0-dev \
   libxcb-xinerama0-dev \
   libxcb-xkb-dev \
   libxcb1-dev \
   libxkbcommon-dev \
   libxkbcommon-x11-dev \
-  libxml2-utils \
   libyajl-dev \
   llvm \
   mediainfo \
   neofetch \
   neovim \
+  pkg-config \
   poppler-utils \
   python-openssl \
   ranger \
   rofi \
   suckless-tools \
   tk-dev \
-  valac \
   w3m \
   xdotool \
   xutils-dev \

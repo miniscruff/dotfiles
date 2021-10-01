@@ -28,13 +28,13 @@ source "$GVM_HOME/scripts/gvm"
 export PATH="$PATH:$HOME/dotfiles/scripts"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/go/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Completions
 source "$NVM_DIR/bash_completion"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C aws_completer aws
-
 
 # Functions
 copy () {
@@ -56,9 +56,8 @@ ls $HOME/.ssh | \
     grep -v "known_hosts\|.*pub\|authorized" | \
     xargs -I{} ssh-add $HOME/.ssh/{}
 
-# will load the file on start, usually an init file
-if [[ $1 == file ]]
-then
-    source "$2"
-set --
+# source .init.sh if it exists
+if test -f ".init.sh"; then
+    source ".init.sh"
 fi
+

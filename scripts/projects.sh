@@ -2,17 +2,11 @@
 # to use add to i3 bindings
 # can alter project path or init file below
 projects_path=$HOME/projects
-init_file=".init.sh"
 select=$(ls "$projects_path" | rofi -dmenu -i -p "Projects")
 
 if [ -z "$select" ]; then
     exit 0
 fi
 
-dir_opt="-d $projects_path/$select"
-if [ -f "$projects_path/$select/$init_file" ]; then
-    startup="-e zsh\ -is\ file\ $init_file"
-else
-    startup=""
-fi
-i3 exec "termite $startup $dir_opt"
+dir_opt="$projects_path/$select"
+i3 exec "alacritty --working-directory $projects_path/$select"
