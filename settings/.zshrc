@@ -53,7 +53,7 @@ kubectl_complete () {
 # Configure ssh keys
 eval "$(ssh-agent -s)"
 ls $HOME/.ssh | \
-    grep -v "known_hosts\|.*pub\|authorized" | \
+    grep -v "known_hosts\|.*pub\|authorized\|config" | \
     xargs -I{} ssh-add $HOME/.ssh/{}
 
 # source .init.sh if it exists
