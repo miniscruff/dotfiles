@@ -1,20 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
-window:
-  # Spread additional padding evenly around the terminal content.
-  dynamic_padding: true
-
-  # Window decorations
-  #
-  # Values for `decorations`:
-  #     - full: Borders and title bar
-  #     - none: Neither borders nor title bar
-  #
-  # Values for `decorations` (macOS only):
-  #     - transparent: Title bar, transparent background and title bar buttons
-  #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: full
-
 # Font configuration
 font:
   # Point size
