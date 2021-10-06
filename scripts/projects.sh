@@ -1,6 +1,7 @@
 #!/bin/bash
-# to use add to i3 bindings
+# to use add to i3 bindings - current binding is Mod+q
 # can alter project path or init file below
+
 projects_path=$HOME/projects
 select=$(ls "$projects_path" | rofi -dmenu -i -p "Projects")
 

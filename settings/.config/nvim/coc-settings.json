@@ -1,20 +1,22 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "go",
-    "json",
-    "js"
-  ],
   "languageserver": {
-    "go": {
+    "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
-      "filetypes": ["go"]
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
     },
     "dockerfile": {
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
     }
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "json",
+    "js"
+  ]
 }

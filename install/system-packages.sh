@@ -36,7 +36,6 @@ sudo apt install -y \
   libyajl-dev \
   llvm \
   mediainfo \
-  neofetch \
   neovim \
   pkg-config \
   poppler-utils \

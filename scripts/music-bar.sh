@@ -1,4 +1,7 @@
 #!/bin/bash
+# this script is used to update the i3-bar section for currently playing music
+# it only works when using a separate window for Youtube Music
+
 wm_line=$(xdotool search --name "YouTube Music" | xargs -l xprop -id | grep _NET_WM_NAME)
 if [ -z "${wm_line}" ]; then
     exit 0
