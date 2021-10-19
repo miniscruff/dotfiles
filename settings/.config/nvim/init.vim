@@ -73,6 +73,7 @@ nnoremap K {
 nnoremap L $
 nnoremap Y y$
 
+set title
 set guifont=Hack:h11
 set noeb
 set rnu
