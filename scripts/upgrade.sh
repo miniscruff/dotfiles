@@ -1,5 +1,7 @@
-#!/bin/bash
-# to change upgrade packages run 'upgrade.sh' from any terminal
+#!/bin/zsh
+# to upgrade packages run 'upgrade.sh' from any terminal
+
+source ~/.zshrc
 
 # update all our apt packages
 update_apt()

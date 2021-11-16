@@ -119,4 +119,3 @@ After making changes:
 1. run `qmk flash`
     1. press `raise+lower+backspace` to when output says "bootloader not found"
 1. wait a few seconds for keyboard to restart
-
