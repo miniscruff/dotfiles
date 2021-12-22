@@ -23,6 +23,7 @@ eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 source "$NVM_DIR/nvm.sh"
 source "$GVM_HOME/scripts/gvm"
+eval "$(direnv hook zsh)"
 
 # add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"

@@ -11,6 +11,6 @@ title=$(echo ${wm_line} | cut -c 30- | tr -d '"')
 if [ "$title" = "YouTube Music" ]; then
     echo ♪ paused ♪
 else
-    song_name=$(echo $title | sed 's/ - YouTube Music//')
+    song_name=$(echo $title | sed 's/ - YouTube Music//' | sed 's/YouTube Music - //')
     echo ♪ ${song_name} ♪
 fi
