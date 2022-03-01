@@ -20,7 +20,6 @@ ln -f .config/fontconfig/fonts.conf $HOME/.config/fontconfig/fonts.conf
 ln -f .config/i3/config $HOME/.config/i3/config
 ln -f .config/i3blocks/config $HOME/.config/i3blocks/config
 ln -f .config/neofetch/config.conf $HOME/.config/neofetch/config.conf
-ln -f .config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -f .config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -f .config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln -f .config/ranger/rc.conf $HOME/.config/ranger/rc.conf
