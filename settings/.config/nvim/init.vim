@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 " General
 Plug 'tpope/vim-fugitive' " handles git integration
 Plug 'lilydjwg/colorizer' " colors #303030 text
-Plug 'luochen1990/rainbow' " alternate ({[ colors
 Plug 'inside/vim-search-pulse' " pulses search results
 Plug 'ray-x/aurora' " color theme
 
@@ -85,7 +84,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm {
-      select = false,
+      -- use tab for completing, otherwise it is just hints
     },
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
@@ -102,7 +101,7 @@ cmp.setup({
       end
     end,
   },
-  
+
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
@@ -258,9 +257,6 @@ au BufNewFile,BufRead *.rst
 
 au BufNewFile,BufRead *.go
     \ set noexpandtab
-
-" Misc plugins
-let g:rainbow_active = 1
 
 " Python
 let python_highlight_all = 1
