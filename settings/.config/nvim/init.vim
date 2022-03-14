@@ -245,7 +245,7 @@ set signcolumn=yes
 set noshowmode
 set completeopt=menu,menuone,noselect
 
-au BufNewFile,BufRead *.js,*.html,*.css,*.vue,*.yml,*.yaml,*.ts,*.json,*.tsx
+au BufNewFile,BufRead *.html
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
