@@ -35,9 +35,14 @@ require'nvim-tree'.setup()
 
 require("aerial").setup({
   backends = {'treesitter', 'lsp'},
+  highlight_on_hover = true,
+  close_on_select = true,
+  float = {
+    relative = 'editor',
+  },
   on_attach = function(bufnr)
     -- Toggle the aerial window with <leader>a
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>o', '<cmd>AerialToggle right<CR>', {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>o', '<cmd>AerialToggle float<CR>', {})
   end
 })
 
