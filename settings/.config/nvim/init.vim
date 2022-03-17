@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive' " handles git integration
 Plug 'lilydjwg/colorizer' " colors #303030 text
 Plug 'inside/vim-search-pulse' " pulses search results
-Plug 'ray-x/aurora' " color theme
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " color scheme
 
 " explorers
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
@@ -152,9 +152,17 @@ for _, lsp in pairs(servers) do
     on_attach = on_attach
   }
 end
-EOF
 
-colorscheme aurora
+-- color scheme
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = true
+
+-- Load the colorscheme
+vim.cmd[[colorscheme tokyonight]]
+
+-- options
+
+EOF
 
 nnoremap <Space> <Nop>
 let mapleader = " "
@@ -213,6 +221,7 @@ nnoremap <leader>fi <cmd>lua require('telescope.builtin').lsp_implementations()<
 nnoremap <leader>fa <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 nnoremap <leader>fk <cmd>lua require('telescope.builtin').keymaps()<cr>
 
+set termguicolors
 set title
 set guifont=Hack:h11
 set noeb
