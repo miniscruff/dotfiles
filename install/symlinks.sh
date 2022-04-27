@@ -24,6 +24,7 @@ ln -f .config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -f .config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln -f .config/ranger/rc.conf $HOME/.config/ranger/rc.conf
 ln -f .config/rofi/config $HOME/.config/rofi/config
+ln -f .fonts/ComicMono.ttf $HOME/.fonts/ComicMono.ttf
 ln -f .gitignore $HOME/.gitignore
 ln -f .zshrc $HOME/.zshrc
 
