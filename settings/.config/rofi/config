@@ -1,4 +1,4 @@
 rofi.theme: gruvbox-dark
-rofi.font: Hack 12
+rofi.font: ComicCode 12
 rofi.modi: combi
 rofi.combi-modi: window,drun,run

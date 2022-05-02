@@ -222,7 +222,6 @@ nnoremap <leader>fk <cmd>lua require('telescope.builtin').keymaps()<cr>
 
 set termguicolors
 set title
-set guifont=Hack:h11
 set noeb
 set rnu
 set nu
