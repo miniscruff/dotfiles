@@ -277,9 +277,9 @@ let g:python3_host_prog = systemlist('which python3')[0]
 
 " Git Branch
 function! GitInfo()
-  let git = fugitive#head()
+  let git = FugitiveHead()
   if git != ''
-    return '  '.fugitive#head().' '
+    return '  '.FugitiveHead().' '
   else
     return ''
 endfunction
