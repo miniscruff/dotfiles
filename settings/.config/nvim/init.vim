@@ -272,8 +272,6 @@ au BufNewFile,BufRead *.go
 
 " Python
 let python_highlight_all = 1
-let g:python_host_prog = systemlist('which python')[0]
-let g:python3_host_prog = systemlist('which python3')[0]
 
 " Git Branch
 function! GitInfo()

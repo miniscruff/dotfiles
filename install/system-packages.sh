@@ -1,7 +1,6 @@
 sudo apt install -y \
   acpi \
   atool \
-  autoconf \
   avrdude \
   cmake \
   feh \
@@ -36,7 +35,6 @@ sudo apt install -y \
   libyajl-dev \
   llvm \
   mediainfo \
-  neovim \
   pkg-config \
   poppler-utils \
   python-openssl \

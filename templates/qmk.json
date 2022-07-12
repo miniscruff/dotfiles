@@ -1,9 +1,5 @@
 {
     "system-packages": [
         "avrdude"
-    ],
-    "post-install": [
-        "pipx install qmk",
-        "qmk setup miniscruff/qmk_firmware --branch miniscruff -y"
     ]
 }

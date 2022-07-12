@@ -7,6 +7,9 @@ Personal dotfile configurations and bootstrapping process.
 On a new machine download git and clone this repo.
 Then run the install.sh script.
 
+Copy a few manual folders into the home directory:
+1. `.fonts`: as it has paid fonts
+
 ## How to add
 
 Files inside settings are symlinked into the home directory on install.

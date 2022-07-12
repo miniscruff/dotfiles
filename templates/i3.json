@@ -4,7 +4,6 @@
         "rofi",
         "suckless-tools",
         "acpi",
-        "autoconf",
         "libxcb1-dev",
         "libxcb-keysyms1-dev",
         "libxcb-util0-dev",
@@ -38,27 +37,6 @@
         },
         {
             "clone": "https://github.com/vivien/i3blocks-contrib.git"
-        },
-        {
-            "clone": "https://github.com/Airblader/xcb-util-xrm",
-            "path": "xcb-util-xrm",
-            "commands": [
-                "git submodule update --init",
-                "./autogen.sh --prefix=/usr",
-                "make",
-                "sudo make install"
-            ]
-        },
-        {
-            "clone": "https://www.github.com/Airblader/i3 i3-gaps",
-            "path": "i3-gaps",
-            "commands": [
-                "autoreconf --force --install",
-                "rm -rf build",
-                "./configure --prefix=/usr --sysconfdir=/etc",
-                "make",
-                "sudo make install"
-            ]
         }
     ]
 }

@@ -4,8 +4,6 @@
 font:
   # Point size
   size: 13.0
-  offset:
-    y: -3
 
 # TokyoNight Alacritty Colors
 colors:

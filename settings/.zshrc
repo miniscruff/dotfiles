@@ -15,15 +15,12 @@ export EDITOR=nvim
 export QMK_HOME="$HOME/dotfiles/packages/qmk_firmware"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-export GVM_HOME="$HOME/.gvm"
 export GPG_TTY=$TTY
 eval "$(pyenv init -)"
 
 # Version managers
 export NVM_DIR="$HOME/.nvm"
 source "$NVM_DIR/nvm.sh"
-source "$GVM_HOME/scripts/gvm"
-eval "$(direnv hook zsh)"
 
 # add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"

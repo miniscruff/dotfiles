@@ -1,3 +1,7 @@
+#! /bin/sh
+
+set -exu
+
 sudo apt install -y \
   software-properties-common \
   build-essential \

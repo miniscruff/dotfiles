@@ -1,0 +1,11 @@
+configuration {
+  modi: "window,run,ssh";
+  font: "mono 12";
+  combi-modi: "window,drun,run";
+  filebrowser {
+    directories-first: true;
+    sorting-method:    "name";
+  }
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
