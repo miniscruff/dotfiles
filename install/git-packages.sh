@@ -16,6 +16,8 @@ cd ..
 
 git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
 
+git clone https://github.com/miniscruff/qmk_firmware
+
 git clone https://github.com/vivien/i3blocks
 cd i3blocks
 ./autogen.sh

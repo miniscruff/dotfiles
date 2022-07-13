@@ -1,4 +1,4 @@
-wget -O go.tar.gz https://dl.google.com/go/go1.17.4.linux-amd64.tar.gz
+wget -O go.tar.gz https://dl.google.com/go/go1.17.12.linux-amd64.tar.gz
 tar -C ${HOME}/.local/bin -xvf go.tar.gz
 rm -f go.tar.gz
 export NVM_HOME="$HOME/.nvm"

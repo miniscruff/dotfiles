@@ -10,11 +10,17 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CACHE_DIR=$HOME/.cache
 source $ZSH/oh-my-zsh.sh
 
+export GOPATH="$HOME/go"
+export GOROOT="$HOME/.go"
+
 # User configuration
 export EDITOR=nvim
 export QMK_HOME="$HOME/dotfiles/packages/qmk_firmware"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+alias gvm="$GOPATH/bin/g"
+
 export GPG_TTY=$TTY
 eval "$(pyenv init -)"
 
@@ -58,4 +64,3 @@ ls $HOME/.ssh | \
 if test -f ".init.sh"; then
     source ".init.sh"
 fi
-

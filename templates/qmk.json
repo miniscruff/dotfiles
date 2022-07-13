@@ -1,5 +1,10 @@
 {
     "system-packages": [
         "avrdude"
+    ],
+    "git-packages": [
+        {
+            "clone": "https://github.com/miniscruff/qmk_firmware"
+        }
     ]
 }
