@@ -24,7 +24,6 @@ update_nvim()
     nvim --headless +'PlugClean!' +qall
     nvim --headless +UpdateRemotePlugins +qall
     nvim --headless +PlugUpdate +qa
-    nvim --headless +CocUpdate +qall
 }
 
 update_apt
