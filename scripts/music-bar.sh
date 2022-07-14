@@ -3,6 +3,10 @@
 # it only works when using https://github.com/ytmdesktop/ytmdesktop
 
 URL="-s http://localhost:9863/query"
+running=$(curl ${URL})
+if [ "${running}" = "" ]; then
+    exit
+fi
 
 paused=$(curl ${URL} | jq .player.isPaused)
 author=$(curl ${URL} | jq .track.author)
