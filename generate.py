@@ -16,10 +16,10 @@ class AptRepositories:
         return self
 
     def combine(self):
-        lines = [f'sudo add-apt-repository -y']
+        lines = []
         for repo in sorted(self.repos):
-            lines.append(f'{indent}{repo}')
-        return ' \\\n'.join(lines)
+            lines.append(f'sudo add-apt-repository -y {repo}')
+        return '\n'.join(lines)
 
 
 class SystemPackages:
@@ -51,16 +51,21 @@ class GitPackages:
 
     def combine(self):
         lines = [
-            'mkdir packages',
+            'mkdir -p packages',
             'cd packages',
             '',
         ]
         for git_package in self.packages:
-            lines.append(f'git clone {git_package["clone"]}')
-            if 'path' in git_package:
-                lines.append('cd ' + git_package['path'])
-                lines.extend(git_package['commands'])
-                lines.append('cd ..')
+            lines.append(f'if [ ! -d "{git_package["path"]}" ] ; then')
+            lines.append(f'{indent}git clone {git_package["clone"]}')
+
+            if 'commands' in git_package:
+                lines.append(indent + 'cd ' + git_package['path'])
+                for cmd in git_package['commands']:
+                    lines.append(indent + cmd)
+                lines.append(indent + 'cd ..')
+
+            lines.append('fi')
             lines.append('')
         lines.append('cd ..')
 
@@ -86,6 +91,10 @@ class PackageConfigs(ShellCommands):
 
 class PostInstalls(ShellCommands):
     key = 'post-install'
+
+
+class PreInstalls(ShellCommands):
+    key = 'pre-install'
 
 
 class Symlinks:
@@ -123,6 +132,7 @@ class Symlinks:
 
 if __name__ == '__main__':
     handlers = [
+        PreInstalls(),
         AptRepositories(),
         SystemPackages(),
         GitPackages(),
@@ -145,4 +155,6 @@ if __name__ == '__main__':
     for handler in handlers:
         with open(f'install/{handler.key}.sh', 'w') as handler_file:
             print('Writing handler ' + handler.__class__.__name__)
+            handler_file.write("#! /bin/bash\n\n")
+            handler_file.write("set -exu\n\n")
             handler_file.write(handler.combine())

@@ -1,3 +1,7 @@
+#! /bin/bash
+
+set -exu
+
 sudo apt install -y \
   acpi \
   atool \
@@ -5,6 +9,8 @@ sudo apt install -y \
   cmake \
   feh \
   highlight \
+  i3-gaps \
+  i3lock \
   i3status \
   libbz2-dev \
   libev-dev \
@@ -35,9 +41,10 @@ sudo apt install -y \
   libyajl-dev \
   llvm \
   mediainfo \
+  neovim \
   pkg-config \
   poppler-utils \
-  python-openssl \
+  python3-pip \
   ranger \
   rofi \
   suckless-tools \
