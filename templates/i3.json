@@ -46,5 +46,8 @@
             "clone": "https://github.com/vivien/i3blocks-contrib.git",
             "path": "i3blocks-contrib"
         }
+    ],
+    "post-install": [
+        "sudo snap install youtube-music-desktop-app"
     ]
 }
