@@ -155,6 +155,6 @@ if __name__ == '__main__':
     for handler in handlers:
         with open(f'install/{handler.key}.sh', 'w') as handler_file:
             print('Writing handler ' + handler.__class__.__name__)
-            handler_file.write("#! /bin/sh\n\n")
+            handler_file.write("#! /bin/bash\n\n")
             handler_file.write("set -exu\n\n")
             handler_file.write(handler.combine())
