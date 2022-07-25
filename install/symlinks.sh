@@ -1,3 +1,7 @@
+#! /bin/sh
+
+set -exu
+
 cd settings
 
 mkdir -p $HOME/.config

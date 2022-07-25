@@ -4,7 +4,8 @@
     ],
     "git-packages": [
         {
-            "clone": "https://github.com/miniscruff/qmk_firmware"
+            "clone": "https://github.com/miniscruff/qmk_firmware",
+            "path": "qmk_firmware"
         }
     ]
 }
