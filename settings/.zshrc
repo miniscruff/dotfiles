@@ -17,22 +17,24 @@ export GOROOT="$HOME/.go"
 export EDITOR=nvim
 export QMK_HOME="$HOME/dotfiles/packages/qmk_firmware"
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-alias gvm="$GOPATH/bin/g"
-
+export AWS_PAGER=""
 export GPG_TTY=$TTY
-eval "$(pyenv init -)"
 
-# Version managers
-export NVM_DIR="$HOME/.nvm"
-source "$NVM_DIR/nvm.sh"
+# aliases
+alias gvm="$GOPATH/bin/g"
 
 # add extra directories to our path
 export PATH="$PATH:$HOME/dotfiles/scripts"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/go/bin"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Version managers
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
+eval "$(pyenv init -)"
 
 # Completions
 source "$NVM_DIR/bash_completion"

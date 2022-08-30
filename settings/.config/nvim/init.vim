@@ -257,16 +257,6 @@ set signcolumn=yes
 set noshowmode
 set completeopt=menu,menuone,noselect
 
-au BufNewFile,BufRead *.html
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
-
-au BufNewFile,BufRead *.rst
-    \ set tabstop=3 |
-    \ set softtabstop=3 |
-    \ set shiftwidth=3
-
 au BufNewFile,BufRead *.go
     \ set noexpandtab
 
