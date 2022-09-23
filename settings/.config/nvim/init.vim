@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive' " handles git integration
 Plug 'lilydjwg/colorizer' " colors #303030 text
 Plug 'inside/vim-search-pulse' " pulses search results
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " color scheme
+Plug 'catppuccin/nvim', {'as': 'catppuccin'} " color theme
 
 " explorers
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
@@ -154,10 +154,11 @@ for _, lsp in pairs(servers) do
 end
 
 -- color scheme
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = true
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
-vim.cmd[[colorscheme tokyonight]]
+require("catppuccin").setup()
+
+vim.cmd [[colorscheme catppuccin]]
 
 -- options
 
