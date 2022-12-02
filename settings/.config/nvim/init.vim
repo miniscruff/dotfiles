@@ -154,7 +154,7 @@ for _, lsp in pairs(servers) do
 end
 
 -- color scheme
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup()
 

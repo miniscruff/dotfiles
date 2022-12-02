@@ -20,6 +20,10 @@
                 "sudo tic -xe alacritty,alacritty-direct extra/alacritty.info",
                 "cp target/release/alacritty ~/.local/bin"
             ]
+        },
+        {
+            "clone": "https://github.com/catpucchin/alacritty.git alacritty-catpuccin",
+            "path": "alacritty-catpuccin"
         }
     ]
 }

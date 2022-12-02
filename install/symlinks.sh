@@ -4,7 +4,7 @@ set -exu
 
 cd settings
 
-mkdir -p $HOME/.config
+mkdir -p $HOME/.config/alacritty
 mkdir -p $HOME/.config/fontconfig
 mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/i3blocks
@@ -14,7 +14,7 @@ mkdir -p $HOME/.config/qmk
 mkdir -p $HOME/.config/ranger
 mkdir -p $HOME/.config/rofi
 
-ln -f .config/alacritty.yml $HOME/.config/alacritty.yml
+ln -f .config/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 ln -f .config/fontconfig/fonts.conf $HOME/.config/fontconfig/fonts.conf
 ln -f .config/i3/config $HOME/.config/i3/config
 ln -f .config/i3blocks/config $HOME/.config/i3blocks/config

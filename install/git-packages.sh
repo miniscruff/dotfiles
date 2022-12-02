@@ -22,6 +22,10 @@ if [ ! -d "alacritty" ] ; then
   cd ..
 fi
 
+if [ ! -d "alacritty-catpuccin" ] ; then
+  git clone https://github.com/catpucchin/alacritty.git alacritty-catpuccin
+fi
+
 if [ ! -d "$HOME/.nvm" ] ; then
   git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm
 fi
