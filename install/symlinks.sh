@@ -6,6 +6,7 @@ cd settings
 
 mkdir -p $HOME/.config/alacritty
 mkdir -p $HOME/.config/fontconfig
+mkdir -p $HOME/.config/gh-dash
 mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/i3blocks
 mkdir -p $HOME/.config/neofetch
@@ -16,6 +17,7 @@ mkdir -p $HOME/.config/rofi
 
 ln -f .config/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 ln -f .config/fontconfig/fonts.conf $HOME/.config/fontconfig/fonts.conf
+ln -f .config/gh-dash/config.yml $HOME/.config/gh-dash/config.yml
 ln -f .config/i3/config $HOME/.config/i3/config
 ln -f .config/i3blocks/config $HOME/.config/i3blocks/config
 ln -f .config/neofetch/config.conf $HOME/.config/neofetch/config.conf

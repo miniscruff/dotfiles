@@ -1,0 +1,46 @@
+prSections:
+  - title: My Pull Requests
+    filters: is:open author:@me
+    layout:
+      author:
+        hidden: true
+  - title: Miniscruff
+    filters: is:open org:miniscruff
+  - title: Tree Defense
+    filters: is:open org:treedefense
+  - title: Needs My Review
+    filters: is:open review-requested:@me
+issuesSections:
+  - title: Assigned
+    filters: is:open assignee:@me
+  - title: Miniscruff
+    filters: is:open org:miniscruff
+  - title: Tree Defense
+    filters: is:open org:treedefense
+defaults:
+  layout:
+    prs:
+      repo:
+        grow: true,
+        width: 10
+        hidden: false
+    # issues: same structure as prs
+  prsLimit: 20 # global limit
+  issuesLimit: 20 # global limit
+  preview:
+    open: true # wether to have the preview pane open by default
+    width: 60 # width in columns
+  refetchIntervalMinutes: 30 # will refetch all sections every 30 minutes
+repoPaths: # configure where to locate repos when checking out PRs
+  miniscruff/*: ~/projects/*
+keybindings:
+  prs:
+    - key: a
+      command: >
+        gh pr review --repo {{.RepoName}} --approve {{.PrNumber}}
+    - key: d
+      command: >
+        gh pr review --repo {{.RepoName}} --approve {{.PrNumber}} &&
+        gh pr comment --repo {{.RepoName}} --body "@dependabot squash and merge" {{.PrNumber}}
+pager:
+  diff: less # or delta for example
