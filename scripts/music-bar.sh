@@ -2,6 +2,8 @@
 # this script is used to update the i3-bar section for currently playing music
 # it only works when using https://github.com/ytmdesktop/ytmdesktop
 
+# echo $PATH
+
 URL="-s http://localhost:9863/query"
 running=$(curl ${URL})
 if [ "${running}" = "" ]; then
@@ -9,8 +11,12 @@ if [ "${running}" = "" ]; then
 fi
 
 paused=$(curl ${URL} | jq .player.isPaused)
-author=$(curl ${URL} | jq .track.author)
-title=$(curl ${URL} | jq .track.title)
+author=$(curl ${URL} | jq .track.author -r)
+title=$(curl ${URL} | jq .track.title -r)
+
+if [ -z "${author}"]; then
+    exit
+fi
 
 button="${1}"
 if [ "$button" = "1" ]; then
@@ -29,7 +35,7 @@ elif [ "$button" = "3" ]; then
 fi
 
 if [ "${paused}" = "true" ]; then
-    echo ⏸  ${title:1:${#title}-2} by ${author:1:${#author}-2}
+    echo ⏸  ${title} by ${author}
 else
-    echo ▶  ${title:1:${#title}-2} by ${author:1:${#author}-2}
+    echo ▶  ${title} by ${author}
 fi

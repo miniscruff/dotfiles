@@ -9,7 +9,6 @@ mkdir -p $HOME/.config/fontconfig
 mkdir -p $HOME/.config/gh-dash
 mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/i3blocks
-mkdir -p $HOME/.config/neofetch
 mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/qmk
 mkdir -p $HOME/.config/ranger
@@ -20,7 +19,6 @@ ln -f .config/fontconfig/fonts.conf $HOME/.config/fontconfig/fonts.conf
 ln -f .config/gh-dash/config.yml $HOME/.config/gh-dash/config.yml
 ln -f .config/i3/config $HOME/.config/i3/config
 ln -f .config/i3blocks/config $HOME/.config/i3blocks/config
-ln -f .config/neofetch/config.conf $HOME/.config/neofetch/config.conf
 ln -f .config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -f .config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln -f .config/ranger/rc.conf $HOME/.config/ranger/rc.conf

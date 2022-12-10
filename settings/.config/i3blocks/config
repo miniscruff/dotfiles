@@ -9,6 +9,7 @@ markup=none
 [music]
 command=$HOME/dotfiles/scripts/music-bar.sh $button
 interval=10
+verbose=yes
 
 [volume-pulseaudio]
 interval=persist
@@ -22,9 +23,9 @@ SUBSCRIBE=1
 
 [wifi]
 interval=10
-interface=wlp111s0
 label=直 
 min_width=直 100%
+INTERFACE=wlp2s0
 
 [batterybar]
 markup=pango
@@ -33,4 +34,4 @@ min_width=abcde
 
 [date-time]
 command=date +"%a %d %b %Y %H:%M"
-interval=5
+interval=15
