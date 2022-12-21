@@ -4,10 +4,9 @@ Personal dotfile configurations and bootstrapping process.
 
 ## Getting Started
 
-1. On a new machine download git and clone this repo.
-    * `be sure to clone in /projects/miniscruff/dotfiles`
+1. Download git and clone this repo at `$HOME/projects/miniscruff/dotfiles`
 1. Download paid fonts and place them in `.fonts`
-1. Then run the install.sh script.
+1. Then run the `install.sh` script.
 
 ## How to add
 
