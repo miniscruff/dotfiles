@@ -10,10 +10,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CACHE_DIR=$HOME/.cache
 source $ZSH/oh-my-zsh.sh
 
-# add extra directories to our path
-export PATH="$PATH:$HOME/dotfiles/scripts"
-# move to ./local/bin
-
 # Completions
 source "$NVM_DIR/bash_completion"
 autoload bashcompinit && bashcompinit
