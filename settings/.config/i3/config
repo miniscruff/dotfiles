@@ -144,12 +144,12 @@ bindsym $mod+shift+u exec --no-startup-id xrandr --output eDP-1 --brightness $(x
 bindsym $mod+ctrl+u exec --no-startup-id xrandr --output eDP-1 --brightness 0.5
 
 # shortcuts to scripts
-bindsym $mod+q exec $HOME/dotfiles/scripts/projects.sh
+bindsym $mod+q exec $HOME/.local/bin/projects.sh
 for_window [title="floating"] floating enable, resize set 800 500
 
 # startup commands
 exec --no-startup-id dunst
-exec --no-startup-id feh --bg-fill $HOME/dotfiles/resources/wallpaper.png
+exec --no-startup-id feh --bg-fill $HOME/projects/miniscruff/dotfiles/resources/wallpaper.png
 
 # i3 gaps
 for_window [class="^.*"] border pixel 2

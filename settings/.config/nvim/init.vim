@@ -258,8 +258,7 @@ set signcolumn=yes
 set noshowmode
 set completeopt=menu,menuone,noselect
 
-au BufNewFile,BufRead *.go
-    \ set noexpandtab
+au BufNewFile,BufRead *.go set noexpandtab
 
 " Python
 let python_highlight_all = 1

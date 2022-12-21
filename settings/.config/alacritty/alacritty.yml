@@ -6,10 +6,10 @@ font:
   size: 13.0
 
 import:
-  - ~/dotfiles/packages/alacritty-catppuccin/catppuccin-mocha.yml
-  # - ~/dotfiles/packages/alacritty-catppuccin/catppuccin-macciato.yml
-  # - ~/dotfiles/packages/alacritty-catppuccin/catppuccin-frappe.yml
-  # - ~/dotfiles/packages/alacritty-catppuccin/catppuccin-latte.yml
+  - ~/projects/catppuccin/alacritty/catppuccin-mocha.yml
+  # - ~/projects/catppuccin/alacritty/catppuccin-macciato.yml
+  # - ~/projects/catppuccin/alacritty/catppuccin-frappe.yml
+  # - ~/projects/catppuccin/alacritty/catppuccin-latte.yml
 
 cursor:
   # Vi mode cursor style

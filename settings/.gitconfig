@@ -1,0 +1,7 @@
+[core]
+	excludesfile = /home/ronnie/.gitignore
+[user]
+	email = miniscruff@hey.com
+	name = Ronnie Smith
+[init]
+	defaultBranch = main

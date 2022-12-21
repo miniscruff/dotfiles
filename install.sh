@@ -1,31 +1,36 @@
 #! /bin/sh
-
 set -exu
 
-mkdir -p $HOME/.local/bin
-
-sudo apt install -y \
-  software-properties-common \
-  build-essential \
-  curl \
-  make
+echo Updating system
 sudo apt upgrade -y
 sudo apt update
+sudo apt install -y curl make
 
-./install/pre-install.sh
+echo Installing Nix
+sh <(curl -L https://nixos.org/nix/install) --daemon
 
-./install/apt-repositories.sh
-sudo apt upgrade -y
-sudo apt update
+echo Installing GH
+nix-env -iA nixpkgs.gh
 
-./install/system-packages.sh
+echo Login to GitHub
+gh auth login
+gh auth setup-git
+
+echo Installing GitHub Repos
 ./install/git-packages.sh
-./install/package-configs.sh
-./install/symlinks.sh
-./install/post-install.sh
 
+echo Symlinking Configs
+./install/symlinks.sh
+
+echo Installing nix packages
+nix-channel --update
+nix-env -iA nixpkgs.nix nixpkgs.cacert
+nix-env -iA nixpkgs.defaultSystem
+
+echo Installing youtube music
+sudo snap install youtube-music-desktop-app
+
+echo Cleaning up
 sudo apt auto-remove -y
 
-echo #########
-echo Completed
-echo #########
+echo Complete

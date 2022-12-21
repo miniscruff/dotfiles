@@ -1,5 +1,0 @@
-{
-    "post-install": [
-        "git config --global core.excludesfile ~/.gitignore"
-    ]
-}

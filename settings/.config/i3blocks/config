@@ -2,7 +2,7 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=$HOME/dotfiles/packages/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
+command=$HOME/projects/vivien/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
