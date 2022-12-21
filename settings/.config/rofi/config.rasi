@@ -2,10 +2,10 @@ configuration {
   modi: "window,run,ssh";
   font: "mono 12";
   combi-modi: "window,drun,run";
-  filebrowser {
-    directories-first: true;
-    sorting-method:    "name";
-  }
+  icon-theme: "Oranchelo";
+  show-icons: true;
+  drun-display-format: "{icon} {name}";
+  sidebar-mode: true;
 }
 
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "./catppuccin-mocha.rasi"

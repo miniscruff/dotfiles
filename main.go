@@ -153,8 +153,13 @@ func main() {
 				"ranger",
 				"highlight",
 				"atool",
+				"./projects/guibou/nixGL",
 			},
 			GitHub: []GitHub{
+				{
+					Owner: "guibou",
+					Repo: "nixGL",
+				},
 				{
 					Owner: "vivien",
 					Repo:  "i3blocks-contrib",

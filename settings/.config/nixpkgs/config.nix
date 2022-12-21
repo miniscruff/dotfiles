@@ -14,6 +14,7 @@
         ranger
         highlight
         atool
+        ./projects/guibou/nixGL
         neovim
         zsh
         oh-my-zsh

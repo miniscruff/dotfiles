@@ -27,6 +27,7 @@ ln -f $DOTFILES/settings/.config/nixpkgs/config.nix $HOME/.config/nixpkgs/config
 ln -f $DOTFILES/settings/.config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -f $DOTFILES/settings/.config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln -f $DOTFILES/settings/.config/ranger/rc.conf $HOME/.config/ranger/rc.conf
+ln -f $DOTFILES/settings/.config/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rasi
 ln -f $DOTFILES/settings/.config/rofi/config.rasi $HOME/.config/rofi/config.rasi
 ln -f $DOTFILES/settings/.gitconfig $HOME/.gitconfig
 ln -f $DOTFILES/settings/.gitignore $HOME/.gitignore
