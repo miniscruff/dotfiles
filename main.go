@@ -36,6 +36,8 @@ type Tool struct {
 	GitHub      []GitHub
 }
 
+type Exporter func(io.Writer, []Tool) error
+
 type GitHub struct {
 	Owner string
 	Repo  string
@@ -78,7 +80,7 @@ func GenGitHub(writer io.Writer, tools []Tool) error {
 	return nil
 }
 
-func GenSymlinks(writer io.Writer) error {
+func GenSymlinks(writer io.Writer, _ []Tool) error {
 	writer.Write([]byte("#! /bin/bash\n"))
 	writer.Write([]byte("set -exu\n\n"))
 	writer.Write([]byte("DOTFILES=$HOME/projects/miniscruff/dotfiles\n\n"))
@@ -116,6 +118,16 @@ func GenSymlinks(writer io.Writer) error {
 	writer.Write([]byte(fmt.Sprintf("\n")))
 
 	return nil
+}
+
+func ExportToFile(exportPath string, tools []Tool, exporter Exporter) error {
+	f, err := os.Create(exportPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	return exporter(f, tools)
 }
 
 func main() {
@@ -164,33 +176,18 @@ func main() {
 		},
 	}
 
-	nixFile, err := os.Create("settings/.config/nixpkgs/config.nix")
+	err := ExportToFile("settings/.config/nixpkgs/config.nix", tools, GenNix)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer nixFile.Close()
 
-	if err := GenNix(nixFile, tools); err != nil {
-		log.Fatal(err)
-	}
-
-	gitFile, err := os.Create("install/git-packages.sh")
+	err = ExportToFile("install/git-packages.sh", tools, GenGitHub)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer gitFile.Close()
 
-	if err := GenGitHub(gitFile, tools); err != nil {
-		log.Fatal(err)
-	}
-
-	symFile, err := os.Create("install/symlinks.sh")
+	err = ExportToFile("install/symlinks.sh", tools, GenSymlinks)
 	if err != nil {
-		log.Fatal(err)
-	}
-	defer symFile.Close()
-
-	if err := GenSymlinks(symFile); err != nil {
 		log.Fatal(err)
 	}
 }
