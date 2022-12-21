@@ -1,9 +1,6 @@
 #!/bin/zsh
 # to upgrade packages run 'upgrade.sh' from any terminal
 
-source ~/.zshrc
-
-# update all our apt packages
 update_apt()
 {
     sudo apt update
@@ -11,21 +8,28 @@ update_apt()
     sudo apt autoremove -y
 }
 
-# update oh my zshell
 update_omz()
 {
     omz update
 }
 
-# neovim packages
 update_nvim()
 {
+    # rewrite using packer
     nvim --headless +PlugUpgrade +qall
     nvim --headless +'PlugClean!' +qall
     nvim --headless +UpdateRemotePlugins +qall
     nvim --headless +PlugUpdate +qa
 }
 
+update_nix()
+{
+    nix-channel --update
+    nix-env -iA nixpkgs.nix nixpkgs.cacert
+    nix-env -iA nixpkgs.defaultSystem
+}
+
 update_apt
+update_nix()
 update_omz
 update_nvim
