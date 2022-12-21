@@ -145,7 +145,7 @@ func main() {
 		{
 			NixPackages: []string{
 				"i3-gaps",
-				"i3-lock",
+				"i3lock",
 				"i3status",
 				"i3blocks",
 				"rofi",

@@ -8,11 +8,6 @@ update_apt()
     sudo apt autoremove -y
 }
 
-update_omz()
-{
-    omz update
-}
-
 update_nvim()
 {
     # rewrite using packer
@@ -30,6 +25,5 @@ update_nix()
 }
 
 update_apt
-update_nix()
-update_omz
+update_nix
 update_nvim
