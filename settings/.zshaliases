@@ -1,0 +1,3 @@
+#! /bin/zsh
+
+alias -g nvim="$HOME/apps/nvim/bin/nvim"

@@ -19,7 +19,7 @@ font pango:ComicCode 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec nixGL alacritty
+bindsym $mod+Return exec $HOME/.local/bin/alacritty
 
 # kill focused window
 bindsym $mod+w kill

@@ -1,29 +1,32 @@
-#!/bin/zsh
-# to upgrade packages run 'upgrade.sh' from any terminal
+#! /bin/zsh
+set -exu
 
-update_apt()
-{
-    sudo apt update
-    sudo apt upgrade -y
-    sudo apt autoremove -y
-}
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
+$DOTFILES/install/apt.sh
+$DOTFILES/install/apps.sh
+$DOTFILES/install/symlinks.sh
 
-update_nvim()
-{
-    # rewrite using packer
-    nvim --headless +PlugUpgrade +qall
-    nvim --headless +'PlugClean!' +qall
-    nvim --headless +UpdateRemotePlugins +qall
-    nvim --headless +PlugUpdate +qa
-}
+git -C $HOME/projects/miniscruff/changie pull
+git -C $HOME/projects/miniscruff/changie-action pull
+git -C $HOME/projects/miniscruff/genenv pull
+git -C $HOME/projects/catppuccin/alacritty pull
+git -C $HOME/projects/rust-lang/rustup pull
+git -C $HOME/projects/ohmyzsh/ohmyzsh pull
+git -C $HOME/projects/alacritty/alacritty pull
+git -C $HOME/projects/vivien/i3blocks-contrib pull
 
-update_nix()
-{
-    nix-channel --update
-    nix-env -iA nixpkgs.nix nixpkgs.cacert
-    nix-env -iA nixpkgs.defaultSystem
-}
+nvim --headless +UpdateRemotePlugins +qall
+nvim --headless +PackerSync +qall
+nvim --headless +PackerClean +qall
 
-update_apt
-update_nix
-update_nvim
+pushd $HOME/projects/rust-lang/rustup
+./rustup-init.sh
+popd
+pushd $HOME/projects/alacritty/alacritty
+cargo build --release
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+cp target/release/alacritty $BIN_DIR
+popd
+

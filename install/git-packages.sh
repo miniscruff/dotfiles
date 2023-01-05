@@ -1,18 +1,6 @@
 #! /bin/bash
 set -exu
 
-if [ ! -d "$HOME/projects/catppuccin/alacritty" ] ; then
-    gh repo clone catppuccin/alacritty -- $HOME/projects/catppuccin/alacritty
-fi
-
-if [ ! -d "$HOME/projects/guibou/nixGL" ] ; then
-    gh repo clone guibou/nixGL -- $HOME/projects/guibou/nixGL
-fi
-
-if [ ! -d "$HOME/projects/vivien/i3blocks-contrib" ] ; then
-    gh repo clone vivien/i3blocks-contrib -- $HOME/projects/vivien/i3blocks-contrib
-fi
-
 if [ ! -d "$HOME/projects/miniscruff/changie" ] ; then
     gh repo clone miniscruff/changie -- $HOME/projects/miniscruff/changie
 fi
@@ -23,4 +11,24 @@ fi
 
 if [ ! -d "$HOME/projects/miniscruff/genenv" ] ; then
     gh repo clone miniscruff/genenv -- $HOME/projects/miniscruff/genenv
+fi
+
+if [ ! -d "$HOME/projects/catppuccin/alacritty" ] ; then
+    gh repo clone catppuccin/alacritty -- $HOME/projects/catppuccin/alacritty
+fi
+
+if [ ! -d "$HOME/projects/rust-lang/rustup" ] ; then
+    gh repo clone rust-lang/rustup -- $HOME/projects/rust-lang/rustup
+fi
+
+if [ ! -d "$HOME/projects/ohmyzsh/ohmyzsh" ] ; then
+    gh repo clone ohmyzsh/ohmyzsh -- $HOME/projects/ohmyzsh/ohmyzsh
+fi
+
+if [ ! -d "$HOME/projects/alacritty/alacritty" ] ; then
+    gh repo clone alacritty/alacritty -- $HOME/projects/alacritty/alacritty
+fi
+
+if [ ! -d "$HOME/projects/vivien/i3blocks-contrib" ] ; then
+    gh repo clone vivien/i3blocks-contrib -- $HOME/projects/vivien/i3blocks-contrib
 fi

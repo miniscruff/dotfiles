@@ -2,12 +2,25 @@
 # to use add to i3 bindings - current binding is Mod+q
 # can alter project path or init file below
 
-projects_path=$HOME/projects
-select=$(ls "$projects_path" | rofi -dmenu -i -p "Projects")
+PROJECT_PATH=$HOME/projects
 
-if [ -z "$select" ]; then
+REPOS=()
+OWNERS=($(ls "${PROJECT_PATH}"))
+for OWNER in "${OWNERS[@]}"
+do
+    NEW_REPOS=($(ls $PROJECT_PATH/${OWNER}))
+    for REPO in "${NEW_REPOS[@]}"
+    do
+        REPOS+=("$OWNER/$REPO")
+    done
+done
+
+ROFI_REPOS=$(printf "%s," "${REPOS[@]}")
+
+SELECT=$(echo -e $ROFI_REPOS | rofi -dmenu -p "Repo" -sep ",")
+if [ -z "$SELECT" ]; then
     exit 0
 fi
+echo $SELECT
 
-dir_opt="$projects_path/$select"
-i3 exec "alacritty --working-directory $projects_path/$select"
+i3 exec "$HOME/.local/bin/alacritty --working-directory $PROJECT_PATH/$SELECT"

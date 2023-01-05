@@ -12,8 +12,7 @@ Personal dotfile configurations and bootstrapping process.
 
 1. Update the tools list in `main.go`
 1. Run `go run main.go`
-1. Run `./install/symlinks.sh` to reapply symlinks if required
-1. Run `./install/git-packages.sh` to clone git repos if required
+1. Run `upgrade.sh` to upgrade all tools and packages
 
 ## QMK Help
 

@@ -6,11 +6,14 @@ sudo apt upgrade -y
 sudo apt update
 sudo apt install -y curl make
 
-echo Installing Nix
-sh <(curl -L https://nixos.org/nix/install) --daemon
+echo Installing packages
+./install/apt.sh
 
-echo Installing GH
-nix-env -iA nixpkgs.gh
+echo Setting zsh as default shell
+sudo chsh -s $(which zsh)
+
+echo Installing apps
+./install/apps.sh
 
 echo Login to GitHub
 gh auth login
@@ -19,14 +22,13 @@ gh auth setup-git
 echo Installing GitHub Repos
 ./install/git-packages.sh
 
+echo Running upgrade
+./settings/.local/bin/upgrade.sh
+
 echo Symlinking Configs
 ./install/symlinks.sh
 
-echo Installing nix packages
-nix-channel --update
-nix-env -iA nixpkgs.nix nixpkgs.cacert
-nix-env -iA nixpkgs.defaultSystem
-
+# only snap so just manually install it for now
 echo Installing youtube music
 sudo snap install youtube-music-desktop-app
 

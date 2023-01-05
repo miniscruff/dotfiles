@@ -7,7 +7,7 @@ separator_block_width=25
 markup=none
 
 [music]
-command=$HOME/dotfiles/scripts/music-bar.sh $button
+command=$HOME/.local/bin/music-bar.sh $button
 interval=10
 verbose=yes
 
