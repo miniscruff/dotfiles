@@ -54,6 +54,7 @@ require('packer').startup(function(use)
       {'saadparwaiz1/cmp_luasnip'},
       {'hrsh7th/cmp-nvim-lsp'},
       {'hrsh7th/cmp-nvim-lua'},
+      {'onsails/lspkind-nvim'},
 
       -- Snippets
       {'L3MON4D3/LuaSnip'},
@@ -84,6 +85,9 @@ require('packer').startup(function(use)
       }, neotest_ns)
     end,
   })
+
+
+  use 'ray-x/lsp_signature.nvim'
 
   if is_bootstrap then
     require('packer').sync()
