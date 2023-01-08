@@ -9,6 +9,7 @@ PATH="$PATH:$HOME/go/bin"
 
 # useful vars
 DOTFILES="$HOME/projects/miniscruff/dotfiles"
+BIN_DIR="$HOME/.local/bin"
 EDITOR=nvim
 GPG_TTY=$TTY
 
