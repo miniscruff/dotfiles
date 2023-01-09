@@ -33,7 +33,6 @@ require('packer').startup(function(use)
     end,
   }
 
-  use 'tpope/vim-fugitive'
   use 'nvim-lualine/lualine.nvim'
 
   use 'NvChad/nvim-colorizer.lua'
@@ -88,6 +87,11 @@ require('packer').startup(function(use)
 
 
   use 'ray-x/lsp_signature.nvim'
+  use 'voldikss/vim-floaterm'
+
+  use {
+    'benfowler/telescope-luasnip.nvim',
+  }
 
   if is_bootstrap then
     require('packer').sync()

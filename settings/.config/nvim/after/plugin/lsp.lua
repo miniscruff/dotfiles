@@ -30,8 +30,7 @@ lsp.setup_nvim_cmp({
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp', keyword_length = 0 },
-    }, {
-        { name = 'luasnip', keyword_length = 2 },
+        { name = 'luasnip', keyword_length = 1 },
     }, {
         { name = 'buffer', keyword_length = 3},
     })

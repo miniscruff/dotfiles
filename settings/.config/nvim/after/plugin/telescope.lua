@@ -6,3 +6,8 @@ vim.keymap.set('n', '<leader>fm', builtin.marks, {})
 vim.keymap.set('n', '<leader>ft', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>fg', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
+vim.keymap.set('n', '<leader>fs', ':Telescope luasnip<cr>', {})
+
+local ts = require('telescope')
+ts.setup({})
+ts.load_extension('luasnip')

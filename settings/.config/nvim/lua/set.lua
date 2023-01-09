@@ -6,7 +6,6 @@ vim.opt.scrolloff = 5
 vim.opt.updatetime = 100
 vim.opt.clipboard = vim.opt.clipboard + "unnamedplus"
 vim.opt.backspace = "indent,eol,start"
-vim.opt.completeopt = { "menu", "menuone" ,"noselect" }
 
 -- files
 vim.opt.swapfile = false
