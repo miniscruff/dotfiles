@@ -16,8 +16,8 @@ lualine.setup({
         lualine_a = {'mode'},
         lualine_b = {'branch'},
         lualine_c = { { 'filename', path = 1 } },
-        lualine_x = {'diff'},
-        lualine_y = {'diagnostics'},
-        lualine_z = {'location'}
+        lualine_x = {'location'},
+        lualine_y = {'diff'},
+        lualine_z = {'diagnostics'},
     },
 })
