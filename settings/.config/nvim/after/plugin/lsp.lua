@@ -1,5 +1,6 @@
 local lsp = require('lsp-zero')
 local cmp = require('cmp')
+local compare = require('cmp.config.compare')
 local lspkind = require('lspkind')
 
 lsp.preset('recommended')
@@ -29,11 +30,23 @@ lsp.setup_nvim_cmp({
         }),
     },
     sources = cmp.config.sources({
-        { name = 'nvim_lsp', keyword_length = 0 },
-        { name = 'luasnip', keyword_length = 1 },
+        { name = 'luasnip', keyword_length = 1, priority = 10 },
+        { name = 'nvim_lsp', keyword_length = 0, priority = 5 },
     }, {
         { name = 'buffer', keyword_length = 3},
-    })
+    }),
+    sorting = {
+        priority_weight = 2.0,
+        comparators = {
+            compare.exact,
+            compare.offset,
+            compare.score,
+            -- compare.recently_used,
+            -- compare.locality,
+            compare.kind,
+            compare.order,
+        },
+    },
 })
 
 lsp.setup()
