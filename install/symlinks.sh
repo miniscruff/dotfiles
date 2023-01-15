@@ -28,7 +28,6 @@ ln -f $DOTFILES/settings/.config/i3blocks/config $HOME/.config/i3blocks/config
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/colors.lua $HOME/.config/nvim/after/plugin/colors.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/line.lua $HOME/.config/nvim/after/plugin/line.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/lsp.lua $HOME/.config/nvim/after/plugin/lsp.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/neckpain.lua $HOME/.config/nvim/after/plugin/neckpain.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/neotest.lua $HOME/.config/nvim/after/plugin/neotest.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/snippets.lua $HOME/.config/nvim/after/plugin/snippets.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/telescope.lua $HOME/.config/nvim/after/plugin/telescope.lua
