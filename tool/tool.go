@@ -11,7 +11,8 @@ type App struct {
 	LatestVersion string
 	TarUrl        string
 	TarFile       string
-	PostDownload  string
+	PreTar        string
+	PostTar       string
 }
 
 type Tool struct {

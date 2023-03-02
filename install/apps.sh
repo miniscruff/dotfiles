@@ -9,10 +9,10 @@ if [ -f "NVIM_VERSION" ] ; then
 fi
 NVIM_LATEST=$(gh release -R neovim/neovim list --exclude-pre-releases --limit 1 | awk '{print $2}')
 if [ "$NVIM_VERSION" != $NVIM_LATEST ] ; then
+   rm -rf nvim-linux64
    wget https://github.com/neovim/neovim/releases/download/v${NVIM_LATEST}/nvim-linux64.tar.gz
    tar -xf nvim-linux64.tar.gz
    rm nvim-linux64.tar.gz
-   mv nvim-linux64 nvim
    echo $NVIM_LATEST > NVIM_VERSION
 fi
 

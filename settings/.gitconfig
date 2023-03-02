@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /home/ronnie/.gitignore
-	editor = /home/ronnie/apps/nvim/bin/nvim
+	editor = /home/ronnie/apps/nvim-linux64/bin/nvim
 [user]
 	email = miniscruff@hey.com
 	name = Ronnie Smith

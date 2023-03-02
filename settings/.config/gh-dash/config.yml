@@ -6,8 +6,6 @@ prSections:
         hidden: true
   - title: Miniscruff
     filters: is:open org:miniscruff
-  - title: Tree Defense
-    filters: is:open org:treedefense
   - title: Needs My Review
     filters: is:open review-requested:@me
 issuesSections:
@@ -15,8 +13,6 @@ issuesSections:
     filters: is:open assignee:@me
   - title: Miniscruff
     filters: is:open org:miniscruff
-  - title: Tree Defense
-    filters: is:open org:treedefense
 defaults:
   layout:
     prs:

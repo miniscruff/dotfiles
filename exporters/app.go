@@ -15,11 +15,14 @@ if [ -f "{{$NameUpper}}_VERSION" ] ; then
 fi
 {{$NameUpper}}_LATEST=$({{.LatestVersion}})
 if [ "${{$NameUpper}}_VERSION" != ${{$NameUpper}}_LATEST ] ; then
+   {{- if .PreTar }}
+   {{.PreTar}}
+   {{- end }}
    wget {{.TarUrl}}/{{.TarFile}}
    tar -xf {{.TarFile}}
    rm {{.TarFile}}
-   {{- if .PostDownload }}
-   {{.PostDownload}}
+   {{- if .PostTar }}
+   {{.PostTar}}
    {{- end }}
    echo ${{$NameUpper}}_LATEST > {{$NameUpper}}_VERSION
 fi

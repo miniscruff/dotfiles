@@ -32,3 +32,5 @@ sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 cp target/release/alacritty $BIN_DIR/
 popd
 
+gh extensions upgrade --all
+
