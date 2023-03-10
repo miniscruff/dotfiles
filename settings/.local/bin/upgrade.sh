@@ -22,6 +22,7 @@ git -C $HOME/projects/vivien/i3blocks-contrib pull
 nvim --headless +UpdateRemotePlugins +qall
 nvim --headless +PackerSync +qall
 nvim --headless +PackerClean +qall
+gh extensions upgrade --all
 
 pushd $HOME/projects/rust-lang/rustup
 ./rustup-init.sh --no-modify-path --profile default -y
@@ -31,6 +32,4 @@ cargo build --release
 sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 cp target/release/alacritty $BIN_DIR/
 popd
-
-gh extensions upgrade --all
 

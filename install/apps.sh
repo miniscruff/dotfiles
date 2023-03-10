@@ -29,4 +29,17 @@ if [ "$GH_VERSION" != $GH_LATEST ] ; then
    echo $GH_LATEST > GH_VERSION
 fi
 
+XC_VERSION="0.0.0"
+if [ -f "XC_VERSION" ] ; then
+    XC_VERSION=$(cat XC_VERSION)
+fi
+XC_LATEST=$(gh release -R joerdav/xc list --exclude-pre-releases --limit 1 | awk '{print $3}' | cut -c2-)
+if [ "$XC_VERSION" != $XC_LATEST ] ; then
+   wget https://github.com/joerdav/xc/releases/download/v${XC_LATEST}/xc_${XC_LATEST}_linux_amd64.tar.gz
+   tar -xf xc_${XC_LATEST}_linux_amd64.tar.gz
+   rm xc_${XC_LATEST}_linux_amd64.tar.gz
+   mv xc $BIN_DIR && rm -rf xc
+   echo $XC_LATEST > XC_VERSION
+fi
+
 cd $HOME/projects/miniscruff/dotfiles
