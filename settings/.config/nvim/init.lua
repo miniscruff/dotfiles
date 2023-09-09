@@ -41,6 +41,10 @@ require('packer').startup(function(use)
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      -- {'rafamadriz/friendly-snippets'},
+
       -- LSP Support
       {'neovim/nvim-lspconfig'},
       {'williamboman/mason.nvim'},
@@ -54,10 +58,6 @@ require('packer').startup(function(use)
       {'hrsh7th/cmp-nvim-lsp'},
       {'hrsh7th/cmp-nvim-lua'},
       {'onsails/lspkind-nvim'},
-
-      -- Snippets
-      {'L3MON4D3/LuaSnip'},
-      -- {'rafamadriz/friendly-snippets'},
     }
   }
 
@@ -84,7 +84,6 @@ require('packer').startup(function(use)
       }, neotest_ns)
     end,
   })
-
 
   use 'ray-x/lsp_signature.nvim'
   use 'voldikss/vim-floaterm'

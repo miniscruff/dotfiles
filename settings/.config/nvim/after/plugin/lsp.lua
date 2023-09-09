@@ -1,12 +1,8 @@
-local lsp = require('lsp-zero')
-local cmp = require('cmp')
-local compare = require('cmp.config.compare')
-local lspkind = require('lspkind')
-
-lsp.preset('recommended')
-
-lsp.set_preferences({
-  set_lsp_keymaps = false
+local lsp = require('lsp-zero').preset({
+  name = 'minimal',
+  set_lsp_keymaps = false,
+  manage_nvim_cmp = false,
+  suggest_lsp_servers = true,
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -22,33 +18,60 @@ lsp.on_attach(function(client, bufnr)
   set('n', '[d', vim.diagnostic.goto_prev, opts)
 end)
 
-lsp.setup_nvim_cmp({
-    formatting = {
-        fields = { 'kind', 'abbr', 'menu', },
-        format = lspkind.cmp_format({
-            with_test = false,
-        }),
-    },
-    sources = cmp.config.sources({
-        { name = 'luasnip', keyword_length = 1, priority = 10 },
-        { name = 'nvim_lsp', keyword_length = 0, priority = 5 },
-    }, {
-        { name = 'buffer', keyword_length = 3},
-    }),
-    sorting = {
-        priority_weight = 2.0,
-        comparators = {
-            compare.exact,
-            compare.offset,
-            compare.score,
-            -- compare.recently_used,
-            -- compare.locality,
-            compare.kind,
-            compare.order,
-        },
-    },
-})
-
 lsp.setup()
 
+-- You need to setup `cmp` after lsp-zero
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+local lspkind = require('lspkind')
+local compare = require('cmp.config.compare')
+
+cmp.setup({
+  -- preselect = 'none',
+  -- completion = {
+    -- completeopt = 'menu,menuone,noinsert,noselect'
+  -- },
+  -- mapping = lsp.defaults.cmp_mappings({
+    -- ['<C-Space>'] = cmp_action.toggle_completion(),
+    -- ['<C-e>'] = cmp.mapping.abort(),
+  -- }),
+  mapping = cmp.mapping.preset.insert({
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+  }),
+  snippet = {
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
+  formatting = {
+    fields = { 'kind', 'abbr', 'menu', },
+    format = lspkind.cmp_format({
+      with_test = false,
+    }),
+  },
+  sources = cmp.config.sources({
+    { name = 'luasnip', keyword_length = 1, priority = 10 },
+    { name = 'nvim_lsp', keyword_length = 0, priority = 5 },
+  }, {
+    { name = 'buffer', keyword_length = 3},
+  }),
+  sorting = {
+      priority_weight = 2.0,
+      comparators = {
+      compare.exact,
+      compare.offset,
+      compare.score,
+      -- compare.recently_used,
+      -- compare.locality,
+      compare.kind,
+      compare.order,
+    },
+  },
+})
 

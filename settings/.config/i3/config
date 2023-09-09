@@ -19,7 +19,7 @@ font pango:ComicCode 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $HOME/.local/bin/alacritty
+bindsym $mod+Return exec "$HOME/.local/bin/alacritty --command zsh"
 
 # kill focused window
 bindsym $mod+w kill
@@ -147,17 +147,14 @@ bindsym $mod+ctrl+u exec --no-startup-id xrandr --output eDP-1 --brightness 0.5
 bindsym $mod+q exec $HOME/.local/bin/projects.sh
 for_window [title="floating"] floating enable, resize set 800 500
 
+# borders and edges
+default_border pixel
+focus_follows_mouse no
+hide_edge_borders smart
+
 # startup commands
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill $HOME/projects/miniscruff/dotfiles/resources/wallpaper.png
-
-# i3 gaps
-for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 0
-smart_gaps on
-smart_borders on
-focus_follows_mouse no
 
 # colors
 # class                 border  backgr. text    indicator child_border

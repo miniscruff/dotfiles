@@ -14,7 +14,7 @@ paused=$(curl ${URL} | jq .player.isPaused)
 author=$(curl ${URL} | jq .track.author -r)
 title=$(curl ${URL} | jq .track.title -r)
 
-if [ -z "${author}"]; then
+if [ -z "${author}" ]; then
     exit
 fi
 

@@ -9,28 +9,16 @@ markup=none
 [music]
 command=$HOME/.local/bin/music-bar.sh $button
 interval=10
-verbose=yes
 
-[volume-pulseaudio]
-interval=persist
-LONG_FORMAT=${SYMB} ${VOL}%
-AUDIO_HIGH_SYMBOL=
-AUDIO_MED_SYMBOL=奔
-AUDIO_MED_THRESH=60
-AUDIO_LOW_SYMBOL=奄
-AUDIO_LOW_THRESH=30
-SUBSCRIBE=1
-
-[wifi]
-interval=10
-label=直 
-min_width=直 100%
-INTERFACE=wlp2s0
-
-[batterybar]
+[mouse]
+command=$HOME/.local/bin/solaar.sh $button
+interval=60
 markup=pango
-interval=30
-min_width=abcde
+
+[volume]
+label=♪
+interval=once
+signal=10
 
 [date-time]
 command=date +"%a %d %b %Y %H:%M"
