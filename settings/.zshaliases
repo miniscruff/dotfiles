@@ -1,3 +1,0 @@
-#! /bin/zsh
-
-alias -g nvim="$HOME/apps/nvim-linux64/bin/nvim"
