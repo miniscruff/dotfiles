@@ -19,9 +19,9 @@ func main() {
 	}
 
 	for _, export := range exps {
-        err = export.Export(tools)
-        if err != nil {
-            log.Fatal("error exporting:", err)
-        }
+		err = export.Export(tools)
+		if err != nil {
+			log.Fatal("error exporting:", err)
+		}
 	}
 }

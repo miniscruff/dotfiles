@@ -25,3 +25,20 @@ After making changes:
 1. run `qmk flash`
     1. press `raise+lower+backspace` to when output says "bootloader not found"
 1. wait a few seconds for keyboard to restart
+
+## Tasks
+Below is a list of common development tasks, these can easily be run using [xc](https://xcfile.dev/).
+For example `xc test` will run the test suite.
+
+### lint
+```
+goimports -w -local github.com/miniscruff/dotfiles .
+golangci-lint run ./...
+```
+
+### run
+Generate scripts
+
+```
+go run .
+```

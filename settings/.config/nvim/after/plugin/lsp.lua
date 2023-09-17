@@ -5,6 +5,8 @@ local lsp = require('lsp-zero').preset({
   suggest_lsp_servers = true,
 })
 
+require('lspconfig').gdscript.setup{}
+
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer=bufnr, remap = false}
   local set = vim.keymap.set

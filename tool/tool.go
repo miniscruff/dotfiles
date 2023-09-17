@@ -25,7 +25,7 @@ type Tool struct {
 
 func AllTools() ([]Tool, error) {
 	return []Tool{
-        devtools,
+		devtools,
 		projects,
 		terminal,
 		wm,

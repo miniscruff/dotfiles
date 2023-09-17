@@ -15,9 +15,9 @@ type SymlinksExporter struct {
 }
 
 func NewSymlinkExporter(w io.WriteCloser) *SymlinksExporter {
-    return &SymlinksExporter{
-        writer: w,
-    }
+	return &SymlinksExporter{
+		writer: w,
+	}
 }
 
 func (e *SymlinksExporter) Export(_ []tool.Tool) error {
@@ -27,8 +27,8 @@ func (e *SymlinksExporter) Export(_ []tool.Tool) error {
 	e.writer.Write([]byte("set -exu\n\n"))
 	e.writer.Write([]byte("DOTFILES=$HOME/projects/miniscruff/dotfiles\n\n"))
 
-    // include the apps directory
-    e.writer.Write([]byte("mkdir -p $HOME/apps\n"))
+	// include the apps directory
+	e.writer.Write([]byte("mkdir -p $HOME/apps\n"))
 
 	// first walk the path to find all directories
 	filepath.Walk("settings", func(path string, info fs.FileInfo, err error) error {

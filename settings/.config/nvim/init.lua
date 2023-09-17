@@ -92,7 +92,9 @@ require('packer').startup(function(use)
     'benfowler/telescope-luasnip.nvim',
   }
 
-  use {"shortcuts/no-neck-pain.nvim", tag = "*" }
+  use {
+    'habamax/vim-godot'
+  }
 
   if is_bootstrap then
     require('packer').sync()

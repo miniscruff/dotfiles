@@ -31,3 +31,5 @@ vim.keymap.set("n", "<c-right>", "<c-w><")
 -- random
 vim.keymap.set("n", "<leader>/", ":noh<cr>")
 vim.keymap.set("n", "<leader>mo", ":copen<cr>")
+-- '<,'>!sort -k 2
+vim.keymap.set("v", "<leader>es", ":!sort -k 2<cr>")

@@ -3,7 +3,6 @@ ZSH_THEME="avit"
 plugins=(
   git
   golang
-  nvm
 )
 
 export ZSH="$HOME/projects/ohmyzsh/ohmyzsh"
@@ -13,8 +12,6 @@ source $ZSH/oh-my-zsh.sh
 # Completions
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /home/ronnie/.local/bin/xc xc
 
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -1,9 +1,10 @@
 package exporters
 
 import (
-    "io"
-    "text/template"
-    "github.com/miniscruff/dotfiles/tool"
+	"io"
+	"text/template"
+
+	"github.com/miniscruff/dotfiles/tool"
 )
 
 const ghTmpl = `
@@ -13,17 +14,17 @@ fi
 `
 
 type GitHubExporter struct {
-    writer io.WriteCloser
+	writer io.WriteCloser
 }
 
 func NewGitHubExporter(w io.WriteCloser) *GitHubExporter {
-    return &GitHubExporter{
-        writer: w,
-    }
+	return &GitHubExporter{
+		writer: w,
+	}
 }
 
 func (e *GitHubExporter) Export(tools []tool.Tool) error {
-    defer e.writer.Close()
+	defer e.writer.Close()
 
 	e.writer.Write([]byte("#! /bin/bash\n"))
 	e.writer.Write([]byte("set -exu\n"))

@@ -13,9 +13,9 @@ type AptExporter struct {
 }
 
 func NewAptExporter(w io.WriteCloser) *AptExporter {
-    return &AptExporter{
-        writer: w,
-    }
+	return &AptExporter{
+		writer: w,
+	}
 }
 
 func (e *AptExporter) Export(tools []tool.Tool) error {
@@ -25,21 +25,21 @@ func (e *AptExporter) Export(tools []tool.Tool) error {
 	e.writer.Write([]byte("set -exu\n\n"))
 	e.writer.Write([]byte("sudo apt install -y \\\n    "))
 
-    allApts := make(map[string]struct{})
+	allApts := make(map[string]struct{})
 
 	for _, t := range tools {
-        for _, apt := range t.AptPackages {
-            allApts[apt] = struct{}{}
-        }
-    }
+		for _, apt := range t.AptPackages {
+			allApts[apt] = struct{}{}
+		}
+	}
 
-    var sortedAndUniqueApts []string
-    for apt := range allApts {
-        sortedAndUniqueApts = append(sortedAndUniqueApts, apt)
-    }
-    sort.Strings(sortedAndUniqueApts)
+	var sortedAndUniqueApts []string
+	for apt := range allApts {
+		sortedAndUniqueApts = append(sortedAndUniqueApts, apt)
+	}
+	sort.Strings(sortedAndUniqueApts)
 
-    e.writer.Write([]byte(strings.Join(sortedAndUniqueApts, " \\\n    ")))
+	e.writer.Write([]byte(strings.Join(sortedAndUniqueApts, " \\\n    ")))
 
 	return nil
 }

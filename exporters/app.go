@@ -1,10 +1,11 @@
 package exporters
 
 import (
-    "io"
-    "text/template"
-    "strings"
-    "github.com/miniscruff/dotfiles/tool"
+	"io"
+	"strings"
+	"text/template"
+
+	"github.com/miniscruff/dotfiles/tool"
 )
 
 const appTmpl = `
@@ -29,26 +30,26 @@ fi
 `
 
 type AppExporter struct {
-    writer io.WriteCloser
+	writer io.WriteCloser
 }
 
 func NewAppExporter(w io.WriteCloser) *AppExporter {
-    return &AppExporter{
-        writer: w,
-    }
+	return &AppExporter{
+		writer: w,
+	}
 }
 
 func (e *AppExporter) Export(tools []tool.Tool) error {
-    defer e.writer.Close()
+	defer e.writer.Close()
 
 	e.writer.Write([]byte("#! /bin/bash\n"))
 	e.writer.Write([]byte("set -exu\n"))
 	e.writer.Write([]byte("BIN_DIR=$HOME/.local/bin\n"))
 	e.writer.Write([]byte("cd $HOME/apps\n"))
 
-    funcMap := template.FuncMap{
-        "ToUpper": strings.ToUpper,
-    }
+	funcMap := template.FuncMap{
+		"ToUpper": strings.ToUpper,
+	}
 
 	appTemplate, err := template.New("app").Funcs(funcMap).Parse(appTmpl)
 	if err != nil {

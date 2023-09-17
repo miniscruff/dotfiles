@@ -28,12 +28,12 @@ var devtools Tool = Tool{
 			PostTar:       "mv xc $BIN_DIR && rm -rf xc",
 		},
 	},
-    Upgrades: []string{
+	Upgrades: []string{
 		"nvim --headless +UpdateRemotePlugins +qall",
 		"nvim --headless +PackerSync +qall",
 		"nvim --headless +PackerClean +qall",
-        "gh extensions upgrade --all",
-    },
+		"gh extensions upgrade --all",
+	},
 	Aliases: []string{
 		`nvim="$HOME/apps/nvim-linux64/bin/nvim"`,
 	},
