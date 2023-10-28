@@ -42,10 +42,10 @@ func NewAppExporter(w io.WriteCloser) *AppExporter {
 func (e *AppExporter) Export(tools []tool.Tool) error {
 	defer e.writer.Close()
 
-	e.writer.Write([]byte("#! /bin/bash\n"))
-	e.writer.Write([]byte("set -exu\n"))
-	e.writer.Write([]byte("BIN_DIR=$HOME/.local/bin\n"))
-	e.writer.Write([]byte("cd $HOME/apps\n"))
+	_, _ = e.writer.Write([]byte("#! /bin/bash\n"))
+	_, _ = e.writer.Write([]byte("set -exu\n"))
+	_, _ = e.writer.Write([]byte("BIN_DIR=$HOME/.local/bin\n"))
+	_, _ = e.writer.Write([]byte("cd $HOME/apps\n"))
 
 	funcMap := template.FuncMap{
 		"ToUpper": strings.ToUpper,
@@ -65,6 +65,7 @@ func (e *AppExporter) Export(tools []tool.Tool) error {
 		}
 	}
 
-	e.writer.Write([]byte("\ncd $HOME/projects/miniscruff/dotfiles\n"))
+	_, _ = e.writer.Write([]byte("\ncd $HOME/projects/miniscruff/dotfiles\n"))
+
 	return nil
 }

@@ -21,9 +21,9 @@ func NewAptExporter(w io.WriteCloser) *AptExporter {
 func (e *AptExporter) Export(tools []tool.Tool) error {
 	defer e.writer.Close()
 
-	e.writer.Write([]byte("#! /bin/zsh\n"))
-	e.writer.Write([]byte("set -exu\n\n"))
-	e.writer.Write([]byte("sudo apt install -y \\\n    "))
+	_, _ = e.writer.Write([]byte("#! /bin/zsh\n"))
+	_, _ = e.writer.Write([]byte("set -exu\n\n"))
+	_, _ = e.writer.Write([]byte("sudo apt install -y \\\n    "))
 
 	allApts := make(map[string]struct{})
 
@@ -37,9 +37,10 @@ func (e *AptExporter) Export(tools []tool.Tool) error {
 	for apt := range allApts {
 		sortedAndUniqueApts = append(sortedAndUniqueApts, apt)
 	}
+
 	sort.Strings(sortedAndUniqueApts)
 
-	e.writer.Write([]byte(strings.Join(sortedAndUniqueApts, " \\\n    ")))
+	_, _ = e.writer.Write([]byte(strings.Join(sortedAndUniqueApts, " \\\n    ")))
 
 	return nil
 }

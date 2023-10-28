@@ -26,8 +26,8 @@ func NewGitHubExporter(w io.WriteCloser) *GitHubExporter {
 func (e *GitHubExporter) Export(tools []tool.Tool) error {
 	defer e.writer.Close()
 
-	e.writer.Write([]byte("#! /bin/bash\n"))
-	e.writer.Write([]byte("set -exu\n"))
+	_, _ = e.writer.Write([]byte("#! /bin/bash\n"))
+	_, _ = e.writer.Write([]byte("set -exu\n"))
 
 	ghTemplate, err := template.New("github").Parse(ghTmpl)
 	if err != nil {

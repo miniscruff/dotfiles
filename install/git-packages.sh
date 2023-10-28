@@ -1,18 +1,6 @@
 #! /bin/bash
 set -exu
 
-if [ ! -d "$HOME/projects/miniscruff/changie" ] ; then
-    gh repo clone miniscruff/changie -- $HOME/projects/miniscruff/changie
-fi
-
-if [ ! -d "$HOME/projects/miniscruff/changie-action" ] ; then
-    gh repo clone miniscruff/changie-action -- $HOME/projects/miniscruff/changie-action
-fi
-
-if [ ! -d "$HOME/projects/miniscruff/genenv" ] ; then
-    gh repo clone miniscruff/genenv -- $HOME/projects/miniscruff/genenv
-fi
-
 if [ ! -d "$HOME/projects/catppuccin/alacritty" ] ; then
     gh repo clone catppuccin/alacritty -- $HOME/projects/catppuccin/alacritty
 fi

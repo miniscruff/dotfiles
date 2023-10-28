@@ -18,6 +18,8 @@ lsp.on_attach(function(client, bufnr)
   set('n', '<leader>gg', vim.diagnostic.open_float, opts)
   set('n', ']d', vim.diagnostic.goto_next, opts)
   set('n', '[d', vim.diagnostic.goto_prev, opts)
+  set('n', '<leader>gn', vim.diagnostic.goto_next, opts)
+  set('n', '<leader>gp', vim.diagnostic.goto_prev, opts)
 end)
 
 lsp.setup()

@@ -10,9 +10,6 @@ $DOTFILES/install/git-packages.sh
 
 $DOTFILES/install/symlinks.sh
 
-git -C $HOME/projects/miniscruff/changie pull
-git -C $HOME/projects/miniscruff/changie-action pull
-git -C $HOME/projects/miniscruff/genenv pull
 git -C $HOME/projects/catppuccin/alacritty pull
 git -C $HOME/projects/rust-lang/rustup pull
 git -C $HOME/projects/ohmyzsh/ohmyzsh pull

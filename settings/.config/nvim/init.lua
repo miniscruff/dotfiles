@@ -89,10 +89,6 @@ require('packer').startup(function(use)
   use 'voldikss/vim-floaterm'
 
   use {
-    'benfowler/telescope-luasnip.nvim',
-  }
-
-  use {
     'habamax/vim-godot'
   }
 

@@ -12,4 +12,3 @@ vim.keymap.set('n', '<leader>fs', builtin.spell_suggest, {})
 
 local ts = require('telescope')
 ts.setup({})
-ts.load_extension('luasnip')

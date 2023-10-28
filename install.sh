@@ -28,10 +28,6 @@ echo Running upgrade
 echo Symlinking Configs
 ./install/symlinks.sh
 
-# only snap so just manually install it for now
-echo Installing youtube music
-sudo snap install youtube-music-desktop-app
-
 echo Cleaning up
 sudo apt auto-remove -y
 
