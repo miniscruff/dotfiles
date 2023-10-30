@@ -5,16 +5,8 @@ if [ ! -d "$HOME/projects/catppuccin/alacritty" ] ; then
     gh repo clone catppuccin/alacritty -- $HOME/projects/catppuccin/alacritty
 fi
 
-if [ ! -d "$HOME/projects/rust-lang/rustup" ] ; then
-    gh repo clone rust-lang/rustup -- $HOME/projects/rust-lang/rustup
-fi
-
 if [ ! -d "$HOME/projects/ohmyzsh/ohmyzsh" ] ; then
     gh repo clone ohmyzsh/ohmyzsh -- $HOME/projects/ohmyzsh/ohmyzsh
-fi
-
-if [ ! -d "$HOME/projects/alacritty/alacritty" ] ; then
-    gh repo clone alacritty/alacritty -- $HOME/projects/alacritty/alacritty
 fi
 
 if [ ! -d "$HOME/projects/vivien/i3blocks-contrib" ] ; then

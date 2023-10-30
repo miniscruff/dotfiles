@@ -10,7 +10,6 @@ var wm Tool = Tool{
 		"ranger",
 		"highlight",
 		"atool",
-		"jq",
 	},
 	GitHub: []GitHub{
 		{

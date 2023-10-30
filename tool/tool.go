@@ -9,7 +9,7 @@ type App struct {
 	Name          string
 	GetVersion    string
 	LatestVersion string
-	TarUrl        string
+	TarURL        string
 	TarFile       string
 	PreTar        string
 	PostTar       string
@@ -19,8 +19,8 @@ type Tool struct {
 	AptPackages []string
 	Apps        []App
 	Upgrades    []string
-	Aliases     []string
 	GitHub      []GitHub
+	Brews       []string
 }
 
 func AllTools() ([]Tool, error) {

@@ -9,15 +9,20 @@ sudo apt install -y curl make
 echo Installing packages
 ./install/apt.sh
 
+echo Installing brew and dependencies
+# TODO: only install brew if not found
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+./install/brew.sh
+
 echo Setting zsh as default shell
 sudo chsh -s $(which zsh)
-
-echo Installing apps
-./install/apps.sh
 
 echo Login to GitHub
 gh auth login
 gh auth setup-git
+
+echo Installing apps
+./install/apps.sh
 
 echo Installing GitHub Repos
 ./install/git-packages.sh

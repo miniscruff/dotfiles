@@ -9,7 +9,6 @@ sudo apt install -y \
     i3blocks \
     i3lock \
     i3status \
-    jq \
     libfontconfig1-dev \
     libfreetype6-dev \
     libxcb-xfixes0-dev \

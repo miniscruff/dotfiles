@@ -12,6 +12,7 @@ PATH="$PATH:$HOME/go/bin"
 export DOTFILES="$HOME/projects/miniscruff/dotfiles"
 export BIN_DIR="$HOME/.local/bin"
 export EDITOR=nvim
+export PAGER="bat -p"
 export GPG_TTY=$TTY
 
 # language info

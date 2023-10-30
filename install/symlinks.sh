@@ -45,7 +45,6 @@ ln -f $DOTFILES/settings/.local/bin/music-bar.sh $HOME/.local/bin/music-bar.sh
 ln -f $DOTFILES/settings/.local/bin/projects.sh $HOME/.local/bin/projects.sh
 ln -f $DOTFILES/settings/.local/bin/solaar.sh $HOME/.local/bin/solaar.sh
 ln -f $DOTFILES/settings/.local/bin/upgrade.sh $HOME/.local/bin/upgrade.sh
-ln -f $DOTFILES/settings/.zshaliases $HOME/.zshaliases
 ln -f $DOTFILES/settings/.zshenv $HOME/.zshenv
 ln -f $DOTFILES/settings/.zshrc $HOME/.zshrc
 

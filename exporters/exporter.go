@@ -26,12 +26,12 @@ func AllExporters() ([]Exporter, error) {
 		return nil, err
 	}
 
-	upgradeWriter, err := os.Create("settings/.local/bin/upgrade.sh")
+	brewWriter, err := os.Create("install/brew.sh")
 	if err != nil {
 		return nil, err
 	}
 
-	aliasWriter, err := os.Create("settings/.zshaliases")
+	upgradeWriter, err := os.Create("settings/.local/bin/upgrade.sh")
 	if err != nil {
 		return nil, err
 	}
@@ -43,9 +43,9 @@ func AllExporters() ([]Exporter, error) {
 
 	return []Exporter{
 		NewAptExporter(aptWriter),
+		NewBrewExporter(brewWriter),
 		NewGitHubExporter(githubWriter),
 		NewUpgradeExporter(upgradeWriter),
-		NewAliasExporter(aliasWriter),
 		NewAppExporter(appWriter),
 		// symlinks should come last after any file gen
 		NewSymlinkExporter(symlinkWriter),
