@@ -20,9 +20,6 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.conditions")
 local conds_expand = require("luasnip.extras.conditions.expand")
 
--- If you're reading this file for the first time, best skip to around line 190
--- where the actual snippet-definitions start.
-
 -- Every unspecified option will be set to the default.
 ls.setup({
 	history = true,
@@ -57,26 +54,4 @@ ls.setup({
 	ft_func = function()
 		return vim.split(vim.bo.filetype, ".", true)
 	end,
-})
-
-ls.add_snippets("go", {
-    -- test func
-	s("tf", {
-		-- Simple static text.
-		t("func Test"),
-		-- function, first parameter is the function, second the Placeholders
-		-- whose text it gets as input.
-		-- Placeholder/Insert.
-		i(1),
-		t({ "(t *testing.T) {", "\t" }),
-		i(0),
-		t({ "", "}" }),
-	}),
-
-    -- if error
-    s("ie", {
-        t({ "if err != nil {", "\treturn "}),
-		i(0, "err"),
-		t({ "", "}" }),
-    })
 })

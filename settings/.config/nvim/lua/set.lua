@@ -37,3 +37,8 @@ vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.wrap = false
+
+-- file types
+vim.filetype.add({
+  extension = { templ = "templ" } 
+})

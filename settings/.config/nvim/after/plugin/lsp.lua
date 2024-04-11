@@ -5,7 +5,23 @@ local lsp = require('lsp-zero').preset({
   suggest_lsp_servers = true,
 })
 
-require('lspconfig').gdscript.setup{}
+local lspconfig = require('lspconfig')
+lspconfig.html.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "html", "templ" },
+})
+lspconfig.htmx.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "html", "templ" },
+})
+lspconfig.tailwindcss.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+    init_options = { userLanguages = { templ = "html" } },
+})
 
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer=bufnr, remap = false}
@@ -44,7 +60,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<C-y>'] = cmp_action.luasnip_supertab(),
     ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
   }),
   snippet = {
@@ -66,8 +82,8 @@ cmp.setup({
     { name = 'buffer', keyword_length = 3},
   }),
   sorting = {
-      priority_weight = 2.0,
-      comparators = {
+    priority_weight = 2.0,
+    comparators = {
       compare.exact,
       compare.offset,
       compare.score,

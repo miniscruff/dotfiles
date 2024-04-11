@@ -68,6 +68,7 @@ require('packer').startup(function(use)
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-neotest/neotest-go",
+      "nvim-neotest/nvim-nio",
     },
     module = { "neotest" },
     config = function()
@@ -87,10 +88,6 @@ require('packer').startup(function(use)
 
   use 'ray-x/lsp_signature.nvim'
   use 'voldikss/vim-floaterm'
-
-  use {
-    'habamax/vim-godot'
-  }
 
   if is_bootstrap then
     require('packer').sync()
