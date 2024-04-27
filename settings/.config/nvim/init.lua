@@ -87,7 +87,13 @@ require('packer').startup(function(use)
   })
 
   use 'ray-x/lsp_signature.nvim'
-  use 'voldikss/vim-floaterm'
+  -- use 'voldikss/vim-floaterm'
+  use {
+    'NeogitOrg/neogit',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+    },
+  }
 
   if is_bootstrap then
     require('packer').sync()

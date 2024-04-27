@@ -4,7 +4,6 @@ require('nvim-treesitter.configs').setup({
     "typescript",
     "go",
     "gomod",
-    "lua",
     "python",
     "css",
     "html",

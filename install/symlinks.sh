@@ -24,6 +24,7 @@ ln -f $DOTFILES/settings/.config/fontconfig/fonts.conf $HOME/.config/fontconfig/
 ln -f $DOTFILES/settings/.config/i3/config $HOME/.config/i3/config
 ln -f $DOTFILES/settings/.config/i3blocks/config $HOME/.config/i3blocks/config
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/colors.lua $HOME/.config/nvim/after/plugin/colors.lua
+ln -f $DOTFILES/settings/.config/nvim/after/plugin/git.lua $HOME/.config/nvim/after/plugin/git.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/line.lua $HOME/.config/nvim/after/plugin/line.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/lsp.lua $HOME/.config/nvim/after/plugin/lsp.lua
 ln -f $DOTFILES/settings/.config/nvim/after/plugin/neotest.lua $HOME/.config/nvim/after/plugin/neotest.lua

@@ -40,5 +40,5 @@ vim.opt.wrap = false
 
 -- file types
 vim.filetype.add({
-  extension = { templ = "templ" } 
+  extension = { templ = "templ", justfile = "make" } 
 })

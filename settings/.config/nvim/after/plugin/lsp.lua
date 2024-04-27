@@ -47,10 +47,10 @@ local lspkind = require('lspkind')
 local compare = require('cmp.config.compare')
 
 cmp.setup({
-  -- preselect = 'none',
-  -- completion = {
-    -- completeopt = 'menu,menuone,noinsert,noselect'
-  -- },
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect'
+  },
   -- mapping = lsp.defaults.cmp_mappings({
     -- ['<C-Space>'] = cmp_action.toggle_completion(),
     -- ['<C-e>'] = cmp.mapping.abort(),
@@ -61,7 +61,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<C-y>'] = cmp_action.luasnip_supertab(),
-    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+    ['<S-n>'] = cmp_action.luasnip_shift_supertab(),
   }),
   snippet = {
     -- REQUIRED - you must specify a snippet engine
