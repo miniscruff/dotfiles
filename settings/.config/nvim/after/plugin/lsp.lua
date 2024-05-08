@@ -60,8 +60,8 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-y>'] = cmp_action.luasnip_supertab(),
-    ['<S-n>'] = cmp_action.luasnip_shift_supertab(),
+    ['<C-n>'] = cmp_action.luasnip_supertab(),
+    ['<C-p>'] = cmp_action.luasnip_shift_supertab(),
   }),
   snippet = {
     -- REQUIRED - you must specify a snippet engine
