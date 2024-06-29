@@ -1,16 +1,18 @@
+local norm_vis = {"n", "v"}
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- colon trick
-vim.keymap.set("n", ";", ":")
-vim.keymap.set("n", "q;", "q:")
+vim.keymap.set(norm_vis, ";", ":")
+vim.keymap.set(norm_vis, "q;", "q:")
 
 -- lines
-vim.keymap.set("n", "H", "^")
-vim.keymap.set("n", "J", "}")
-vim.keymap.set("n", "K", "{")
-vim.keymap.set("n", "L", "$")
+vim.keymap.set(norm_vis, "H", "^")
+vim.keymap.set(norm_vis, "J", "}")
+vim.keymap.set(norm_vis, "K", "{")
+vim.keymap.set(norm_vis, "L", "$")
 vim.keymap.set("n", "Y", "y$")
 vim.keymap.set("n", "<c-j>", [[:exe ":m.+".v:count1<cr>]])
 vim.keymap.set("n", "<c-k>", [[:exe ":m.-".(v:count1+1)<cr>]])

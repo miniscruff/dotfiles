@@ -26,3 +26,4 @@ eval "$(ssh-agent -s)"
 ls $HOME/.ssh | \
     grep -v "known_hosts\|.*pub\|authorized\|config" | \
     xargs -I{} ssh-add $HOME/.ssh/{}
+
