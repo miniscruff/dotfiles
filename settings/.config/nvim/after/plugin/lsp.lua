@@ -30,6 +30,7 @@ lsp.on_attach(function(client, bufnr)
   set('n', '<leader>gi', vim.lsp.buf.implementation, opts)
   set('n', '<leader>ga', vim.lsp.buf.code_action, opts)
   set('n', '<leader>gf', vim.lsp.buf.format, opts)
+  set('n', '<leader>gr', vim.lsp.buf.references, opts)
   set('n', '<leader><space>', vim.lsp.buf.hover, opts)
   set('n', '<leader>gg', vim.diagnostic.open_float, opts)
   set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -58,8 +59,8 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    -- ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-n>'] = cmp_action.luasnip_supertab(),
     ['<C-p>'] = cmp_action.luasnip_shift_supertab(),
   }),
