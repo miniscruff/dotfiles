@@ -11,8 +11,11 @@ mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/i3blocks
 mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/nvim/after
-mkdir -p $HOME/.config/nvim/after/plugin
+mkdir -p $HOME/.config/nvim/after/ftplugin
 mkdir -p $HOME/.config/nvim/lua
+mkdir -p $HOME/.config/nvim/lua/config
+mkdir -p $HOME/.config/nvim/lua/plugins
+mkdir -p $HOME/.config/nvim/plugin
 mkdir -p $HOME/.config/qmk
 mkdir -p $HOME/.config/ranger
 mkdir -p $HOME/.config/rofi
@@ -23,19 +26,25 @@ ln -f $DOTFILES/settings/.config/alacritty/alacritty.toml $HOME/.config/alacritt
 ln -f $DOTFILES/settings/.config/fontconfig/fonts.conf $HOME/.config/fontconfig/fonts.conf
 ln -f $DOTFILES/settings/.config/i3/config $HOME/.config/i3/config
 ln -f $DOTFILES/settings/.config/i3blocks/config $HOME/.config/i3blocks/config
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/colors.lua $HOME/.config/nvim/after/plugin/colors.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/git.lua $HOME/.config/nvim/after/plugin/git.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/line.lua $HOME/.config/nvim/after/plugin/line.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/lsp.lua $HOME/.config/nvim/after/plugin/lsp.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/neotest.lua $HOME/.config/nvim/after/plugin/neotest.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/snippets.lua $HOME/.config/nvim/after/plugin/snippets.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/telescope.lua $HOME/.config/nvim/after/plugin/telescope.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/term.lua $HOME/.config/nvim/after/plugin/term.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/tree.lua $HOME/.config/nvim/after/plugin/tree.lua
-ln -f $DOTFILES/settings/.config/nvim/after/plugin/treesitter.lua $HOME/.config/nvim/after/plugin/treesitter.lua
+ln -f $DOTFILES/settings/.config/nvim/.gitignore $HOME/.config/nvim/.gitignore
+ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/css.lua $HOME/.config/nvim/after/ftplugin/css.lua
+ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/go.lua $HOME/.config/nvim/after/ftplugin/go.lua
+ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/html.lua $HOME/.config/nvim/after/ftplugin/html.lua
+ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/lua.lua $HOME/.config/nvim/after/ftplugin/lua.lua
 ln -f $DOTFILES/settings/.config/nvim/init.lua $HOME/.config/nvim/init.lua
-ln -f $DOTFILES/settings/.config/nvim/lua/remap.lua $HOME/.config/nvim/lua/remap.lua
-ln -f $DOTFILES/settings/.config/nvim/lua/set.lua $HOME/.config/nvim/lua/set.lua
+ln -f $DOTFILES/settings/.config/nvim/lazy-lock.json $HOME/.config/nvim/lazy-lock.json
+ln -f $DOTFILES/settings/.config/nvim/lua/config/lazy.lua $HOME/.config/nvim/lua/config/lazy.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/catppuccin.lua $HOME/.config/nvim/lua/plugins/catppuccin.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/completion.lua $HOME/.config/nvim/lua/plugins/completion.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/dadbod.lua $HOME/.config/nvim/lua/plugins/dadbod.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/lsp.lua $HOME/.config/nvim/lua/plugins/lsp.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/lualine.lua $HOME/.config/nvim/lua/plugins/lualine.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/neotest.lua $HOME/.config/nvim/lua/plugins/neotest.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/oil.lua $HOME/.config/nvim/lua/plugins/oil.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/telescope.lua $HOME/.config/nvim/lua/plugins/telescope.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/treesitter.lua $HOME/.config/nvim/lua/plugins/treesitter.lua
+ln -f $DOTFILES/settings/.config/nvim/plugin/keymaps.lua $HOME/.config/nvim/plugin/keymaps.lua
+ln -f $DOTFILES/settings/.config/nvim/plugin/options.lua $HOME/.config/nvim/plugin/options.lua
 ln -f $DOTFILES/settings/.config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln -f $DOTFILES/settings/.config/ranger/rc.conf $HOME/.config/ranger/rc.conf
 ln -f $DOTFILES/settings/.config/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rasi
