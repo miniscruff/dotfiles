@@ -40,7 +40,7 @@ ln -f $DOTFILES/settings/.config/nvim/lua/plugins/dadbod.lua $HOME/.config/nvim/
 ln -f $DOTFILES/settings/.config/nvim/lua/plugins/lsp.lua $HOME/.config/nvim/lua/plugins/lsp.lua
 ln -f $DOTFILES/settings/.config/nvim/lua/plugins/lualine.lua $HOME/.config/nvim/lua/plugins/lualine.lua
 ln -f $DOTFILES/settings/.config/nvim/lua/plugins/neotest.lua $HOME/.config/nvim/lua/plugins/neotest.lua
-ln -f $DOTFILES/settings/.config/nvim/lua/plugins/oil.lua $HOME/.config/nvim/lua/plugins/oil.lua
+ln -f $DOTFILES/settings/.config/nvim/lua/plugins/neotree.lua $HOME/.config/nvim/lua/plugins/neotree.lua
 ln -f $DOTFILES/settings/.config/nvim/lua/plugins/telescope.lua $HOME/.config/nvim/lua/plugins/telescope.lua
 ln -f $DOTFILES/settings/.config/nvim/lua/plugins/treesitter.lua $HOME/.config/nvim/lua/plugins/treesitter.lua
 ln -f $DOTFILES/settings/.config/nvim/plugin/keymaps.lua $HOME/.config/nvim/plugin/keymaps.lua
