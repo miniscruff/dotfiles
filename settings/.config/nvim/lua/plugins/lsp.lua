@@ -5,6 +5,7 @@ return {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
+      "ray-x/lsp_signature.nvim",
       { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
     },
     config = function()
@@ -37,7 +38,6 @@ return {
             semanticTokensProvider = vim.NIL,
           },
         },
-        templ = true,
         cssls = true,
       }
 
@@ -124,6 +124,8 @@ return {
 
       require("lsp_lines").setup()
       vim.diagnostic.config { virtual_text = false }
+
+      require("lsp_signature").setup()
     end,
   },
 }
