@@ -88,7 +88,6 @@ return {
           vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
 
 
-          local builtin = require "telescope.builtin"
           local set = vim.keymap.set
           local opts = { buffer = bufnr, remap = false }
           set('n', '<leader>gd', vim.lsp.buf.definition, opts)
@@ -119,13 +118,15 @@ return {
               client.server_capabilities[k] = v
             end
           end
+
+
+        require("lsp_signature").on_attach({}, bufnr)
+
         end,
       })
 
       require("lsp_lines").setup()
       vim.diagnostic.config { virtual_text = false }
-
-      require("lsp_signature").setup()
     end,
   },
 }
