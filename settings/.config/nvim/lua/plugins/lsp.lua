@@ -17,7 +17,6 @@ return {
       local lspconfig = require("lspconfig")
 
       local servers = {
-        bashls = true,
         gopls = {
           settings = {
             gopls = {
@@ -33,12 +32,6 @@ return {
             },
           },
         },
-        lua_ls = {
-          server_capabilities = {
-            semanticTokensProvider = vim.NIL,
-          },
-        },
-        cssls = true,
       }
 
       local servers_to_install = vim.tbl_filter(function(key)
@@ -51,14 +44,8 @@ return {
       end, vim.tbl_keys(servers))
 
       require("mason").setup()
-      local ensure_installed = {
-        "stylua",
-        "lua_ls",
-        "delve",
-      }
 
-      vim.list_extend(ensure_installed, servers_to_install)
-      require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+      require("mason-tool-installer").setup { ensure_installed = servers_to_install }
 
       for name, config in pairs(servers) do
         if config == true then

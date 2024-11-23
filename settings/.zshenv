@@ -1,6 +1,7 @@
 # local bin
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:$HOME/.cargo/bin"
+PATH="/home/linuxbrew/.linuxbrew/opt/libpq/bin:$PATH"
 
 # go bin
 GOPATH="$HOME/go"
