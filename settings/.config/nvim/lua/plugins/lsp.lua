@@ -4,7 +4,6 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
       "ray-x/lsp_signature.nvim",
       { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
     },
@@ -14,52 +13,34 @@ return {
         capabilities = require("cmp_nvim_lsp").default_capabilities()
       end
 
-      local lspconfig = require("lspconfig")
-
-      local servers = {
-        gopls = {
-          settings = {
-            gopls = {
-              hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-              },
-            },
-          },
-        },
-      }
-
-      local servers_to_install = vim.tbl_filter(function(key)
-        local t = servers[key]
-        if type(t) == "table" then
-          return not t.manual_install
-        else
-          return t
-        end
-      end, vim.tbl_keys(servers))
-
       require("mason").setup()
+      require("mason-lspconfig").setup()
 
-      require("mason-tool-installer").setup { ensure_installed = servers_to_install }
-
-      for name, config in pairs(servers) do
-        if config == true then
-          config = {}
-        end
-        config = vim.tbl_deep_extend("force", {}, {
-          capabilities = capabilities,
-        }, config)
-
-        lspconfig[name].setup(config)
-      end
-
-      local disable_semantic_tokens = {
-        lua = true,
+      require("mason-lspconfig").setup_handlers {
+          -- The first entry (without a key) will be the default handler
+          -- and will be called for each installed server that doesn't have
+          -- a dedicated handler.
+          function (server_name) -- default handler (optional)
+              require("lspconfig")[server_name].setup {}
+          end,
+          ["lua_ls"] = function ()
+            local lspconfig = require("lspconfig")
+            lspconfig.gopls.setup{
+              settings = {
+                gopls = {
+                  hints = {
+                    assignVariableTypes = true,
+                    compositeLiteralFields = true,
+                    compositeLiteralTypes = true,
+                    constantValues = true,
+                    functionTypeParameters = true,
+                    parameterNames = true,
+                    rangeVariableTypes = true,
+                  },
+                },
+              },
+            }
+         end,
       }
 
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -67,13 +48,7 @@ return {
           local bufnr = args.buf
           local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
 
-          local settings = servers[client.name]
-          if type(settings) ~= "table" then
-            settings = {}
-          end
-
           vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-
 
           local set = vim.keymap.set
           local opts = { buffer = bufnr, remap = false }
@@ -89,26 +64,7 @@ return {
           set('n', '<leader>gn', vim.diagnostic.goto_next, opts)
           set('n', '<leader>gp', vim.diagnostic.goto_prev, opts)
 
-          local filetype = vim.bo[bufnr].filetype
-          if disable_semantic_tokens[filetype] then
-            client.server_capabilities.semanticTokensProvider = nil
-          end
-
-          -- Override server capabilities
-          if settings.server_capabilities then
-            for k, v in pairs(settings.server_capabilities) do
-              if v == vim.NIL then
-                ---@diagnostic disable-next-line: cast-local-type
-                v = nil
-              end
-
-              client.server_capabilities[k] = v
-            end
-          end
-
-
-        require("lsp_signature").on_attach({}, bufnr)
-
+          require("lsp_signature").on_attach({}, bufnr)
         end,
       })
 
