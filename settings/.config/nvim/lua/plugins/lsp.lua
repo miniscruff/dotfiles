@@ -57,6 +57,7 @@ return {
           set('n', '<leader>ga', vim.lsp.buf.code_action, opts)
           set('n', '<leader>gf', vim.lsp.buf.format, opts)
           set('n', '<leader>gr', vim.lsp.buf.references, opts)
+          set('n', '<leader>ge', vim.lsp.buf.rename, opts)
           set('n', '<leader><space>', vim.lsp.buf.hover, opts)
           set('n', '<leader>gg', vim.diagnostic.open_float, opts)
           set('n', ']d', vim.diagnostic.goto_next, opts)
