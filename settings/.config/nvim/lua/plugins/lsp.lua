@@ -54,7 +54,7 @@ return {
           local opts = { buffer = bufnr, remap = false }
           set('n', '<leader>gd', vim.lsp.buf.definition, opts)
           set('n', '<leader>gi', vim.lsp.buf.implementation, opts)
-          set('n', '<leader>ga', vim.lsp.buf.code_action, opts)
+          set({'n', 'v'}, '<leader>ga', vim.lsp.buf.code_action, opts)
           set('n', '<leader>gf', vim.lsp.buf.format, opts)
           set('n', '<leader>gr', vim.lsp.buf.references, opts)
           set('n', '<leader>ge', vim.lsp.buf.rename, opts)
