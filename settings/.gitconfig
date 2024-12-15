@@ -5,3 +5,5 @@
 	name = Ronnie Smith
 [init]
 	defaultBranch = main
+[push]
+	autoSetupRemote = true
