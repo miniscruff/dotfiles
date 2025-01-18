@@ -1,0 +1,8 @@
+font-family=ComicCode Nerd Font
+font-feature=-calt
+font-feature=-liga
+font-feature=-dlig
+font-size=15
+theme=catppuccin-mocha
+keybind=clear
+window-decoration=false

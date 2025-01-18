@@ -19,7 +19,8 @@ font pango:ComicCode 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "$HOME/.local/bin/alacritty --command zsh"
+bindsym $mod+Return exec "ghostty"
+bindsym $mod+Shift+Return exec "$HOME/.local/bin/alacritty --command zsh"
 
 # kill focused window
 bindsym $mod+w kill
