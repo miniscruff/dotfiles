@@ -1,10 +1,11 @@
 #! /bin/zsh
 set -exu
 
-brew install -y \
-    alacritty \
+brew install \
     bat \
     gh \
     go \
     gum \
-    jq
+    jq \
+    neovim \
+    zellij

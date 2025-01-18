@@ -23,7 +23,7 @@ func (e *BrewExporter) Export(tools []tool.Tool) error {
 
 	_, _ = e.writer.Write([]byte("#! /bin/zsh\n"))
 	_, _ = e.writer.Write([]byte("set -exu\n\n"))
-	_, _ = e.writer.Write([]byte("brew install -y \\\n    "))
+	_, _ = e.writer.Write([]byte("brew install \\\n    "))
 
 	allBrews := make(map[string]struct{})
 

@@ -13,15 +13,8 @@ var terminal Tool = Tool{
 	},
 	GitHub: []GitHub{
 		{
-			Owner: "catppuccin",
-			Repo:  "alacritty",
-		},
-		{
 			Owner: "ohmyzsh",
 			Repo:  "ohmyzsh",
 		},
-	},
-	Brews: []string{
-		"alacritty",
 	},
 }
