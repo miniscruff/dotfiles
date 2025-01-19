@@ -17,6 +17,9 @@ autoload -Uz compinit && compinit
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# Auto start zellij
+eval "$(zellij setup --generate-auto-start zsh)"
+
 # Functions
 copy () {
     xclip -selection clipboard -i

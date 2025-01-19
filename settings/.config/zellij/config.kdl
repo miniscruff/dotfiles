@@ -1,0 +1,192 @@
+keybinds clear-defaults=true {
+    locked {
+        bind "Ctrl j" { SwitchToMode "normal"; }
+    }
+    shared_except "locked" {
+        bind "Ctrl j" { SwitchToMode "locked"; }
+    }
+    normal {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "m" { SwitchToMode "move"; }
+        bind "t" { SwitchToMode "tab"; }
+        bind "s" { SwitchToMode "scroll"; }
+        bind "f" { SwitchToMode "search"; }
+        bind "p" { SwitchToMode "pane"; }
+        bind "r" { SwitchToMode "resize"; }
+    }
+    pane {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "h" { MoveFocus "left"; }
+        bind "j" { MoveFocus "down"; }
+        bind "k" { MoveFocus "up"; }
+        bind "l" { MoveFocus "right"; }
+        bind "n" { NewPane "right"; SwitchToMode "locked"; }
+        bind "x" { CloseFocus; SwitchToMode "locked"; }
+        // bind "n" { NewPane; SwitchToMode "locked"; }
+        // bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
+        // bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
+        // bind "d" { NewPane "down"; SwitchToMode "locked"; }
+        // bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
+        // bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+        // bind "tab" { SwitchFocus; }
+    }
+    tab {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "q" { GoToTab 1; SwitchToMode "locked"; }
+        bind "w" { GoToTab 2; SwitchToMode "locked"; }
+        bind "e" { GoToTab 3; SwitchToMode "locked"; }
+        bind "r" { GoToTab 4; SwitchToMode "locked"; }
+        bind "t" { GoToTab 5; SwitchToMode "locked"; }
+        bind "y" { GoToTab 6; SwitchToMode "locked"; }
+        bind "u" { GoToTab 7; SwitchToMode "locked"; }
+        bind "h" { GoToPreviousTab; }
+        bind "l" { GoToNextTab; }
+        bind "n" { NewTab; SwitchToMode "locked"; }
+        bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
+    }
+    resize {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "H" { Resize "Decrease left"; }
+        bind "J" { Resize "Decrease down"; }
+        bind "K" { Resize "Decrease up"; }
+        bind "L" { Resize "Decrease right"; }
+        bind "h" { Resize "Increase left"; }
+        bind "j" { Resize "Increase down"; }
+        bind "k" { Resize "Increase up"; }
+        bind "l" { Resize "Increase right"; }
+    }
+    move {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "h" { MovePane "left"; }
+        bind "j" { MovePane "down"; }
+        bind "k" { MovePane "up"; }
+        bind "l" { MovePane "right"; }
+    }
+    shared_among "scroll" "search" {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "J" { PageScrollUp; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "K" { PageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+    }
+    scroll {
+        bind "f" { SwitchToMode "search"; }
+    }
+    search {
+        bind "enter" { SwitchToMode "entersearch"; }
+        bind "s" { SwitchToMode "scroll"; }
+        bind "i" { SearchToggleOption "CaseSensitivity"; }
+        bind "n" { Search "down"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+        bind "p" { Search "up"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+    }
+    entersearch {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "enter" { SwitchToMode "search"; }
+    }
+    renametab {
+        bind "enter" { SwitchToMode "Locked"; }
+        bind "esc" { UndoRenameTab; SwitchToMode "locked"; }
+    }
+    renamepane {
+        bind "enter" { SwitchToMode "Locked"; }
+        bind "esc" { UndoRenamePane; SwitchToMode "locked"; }
+    }
+}
+
+themes {
+  catppuccin-latte {
+    bg "#acb0be" // Surface2
+    fg "#4c4f69" // Text
+    red "#d20f39"
+    green "#40a02b"
+    blue "#1e66f5"
+    yellow "#df8e1d"
+    magenta "#ea76cb" // Pink
+    orange "#fe640b" // Peach
+    cyan "#04a5e5" // Sky
+    black "#e6e9ef" // Mantle
+    white "#4c4f69" // Text
+  }
+
+  catppuccin-frappe {
+    bg "#626880" // Surface2
+    fg "#c6d0f5" // Text
+    red "#e78284"
+    green "#a6d189"
+    blue "#8caaee"
+    yellow "#e5c890"
+    magenta "#f4b8e4" // Pink
+    orange "#ef9f76" // Peach
+    cyan "#99d1db" // Sky
+    black "#292c3c" // Mantle
+    white "#c6d0f5" // Text
+  }
+
+  catppuccin-macchiato {
+    bg "#5b6078" // Surface2
+    fg "#cad3f5" // Text
+    red "#ed8796"
+    green "#a6da95"
+    blue "#8aadf4"
+    yellow "#eed49f"
+    magenta "#f5bde6" // Pink
+    orange "#f5a97f" // Peach
+    cyan "#91d7e3" // Sky
+    black "#1e2030" // Mantle
+    white "#cad3f5" // Text
+  }
+
+  catppuccin-mocha {
+    bg "#585b70" // Surface2
+    fg "#cdd6f4" // Text
+    red "#f38ba8"
+    green "#a6e3a1"
+    blue "#89b4fa"
+    yellow "#f9e2af"
+    magenta "#f5c2e7" // Pink
+    orange "#fab387" // Peach
+    cyan "#89dceb" // Sky
+    black "#181825" // Mantle
+    white "#cdd6f4" // Text
+  }
+}
+
+// Plugin aliases - can be used to change the implementation of Zellij
+// changing these requires a restart to take effect
+plugins {
+    compact-bar location="zellij:compact-bar"
+    configuration location="zellij:configuration"
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    plugin-manager location="zellij:plugin-manager"
+    session-manager location="zellij:session-manager"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    tab-bar location="zellij:tab-bar"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+}
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
+ 
+default_mode "locked"
+theme "catppuccin-mocha"
+mouse_mode false
+pane_frames false
+session_name "sesh"
+attach_to_session true
+
+// other layouts are here
+// https://github.com/zellij-org/zellij/tree/main/zellij-utils/assets/layouts
+default_layout "compact"
+ 

@@ -20,6 +20,7 @@ mkdir -p $HOME/.config/nvim/plugin
 mkdir -p $HOME/.config/qmk
 mkdir -p $HOME/.config/ranger
 mkdir -p $HOME/.config/rofi
+mkdir -p $HOME/.config/zellij
 mkdir -p $HOME/.local
 mkdir -p $HOME/.local/bin
 
@@ -50,6 +51,7 @@ ln -f $DOTFILES/settings/.config/qmk/qmk.ini $HOME/.config/qmk/qmk.ini
 ln -f $DOTFILES/settings/.config/ranger/rc.conf $HOME/.config/ranger/rc.conf
 ln -f $DOTFILES/settings/.config/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rasi
 ln -f $DOTFILES/settings/.config/rofi/config.rasi $HOME/.config/rofi/config.rasi
+ln -f $DOTFILES/settings/.config/zellij/config.kdl $HOME/.config/zellij/config.kdl
 ln -f $DOTFILES/settings/.gitconfig $HOME/.gitconfig
 ln -f $DOTFILES/settings/.local/bin/audio.sh $HOME/.local/bin/audio.sh
 ln -f $DOTFILES/settings/.local/bin/music-bar.sh $HOME/.local/bin/music-bar.sh
