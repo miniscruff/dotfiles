@@ -178,4 +178,4 @@ attach_to_session true
 // other layouts are here
 // https://github.com/zellij-org/zellij/tree/main/zellij-utils/assets/layouts
 default_layout "compact"
- 
+show_startup_tips false
