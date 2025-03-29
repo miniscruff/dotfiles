@@ -4,5 +4,7 @@ font-feature=-liga
 font-feature=-dlig
 font-size=15
 theme=catppuccin-mocha
-keybind=clear
 window-decoration=false
+
+keybind=clear
+keybind=global:ctrl+v=paste_from_clipboard
