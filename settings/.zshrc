@@ -3,7 +3,6 @@ ZSH_THEME="avit"
 plugins=(
   git
   golang
-  dotenv
 )
 
 export ZSH="$HOME/projects/ohmyzsh/ohmyzsh"
