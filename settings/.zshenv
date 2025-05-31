@@ -14,7 +14,7 @@ export FLYCTL_INSTALL="/home/ronnie/.fly"
 PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # useful vars
-export DOTFILES="$HOME/projects/miniscruff/dotfiles"
+export DOTFILES="$HOME/projects/dotfiles"
 export BIN_DIR="$HOME/.local/bin"
 export EDITOR=nvim
 export PAGER="bat -p"
