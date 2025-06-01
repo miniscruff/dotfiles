@@ -155,7 +155,7 @@ hide_edge_borders smart
 
 # startup commands
 exec --no-startup-id dunst
-exec --no-startup-id feh --bg-fill $HOME/projects/miniscruff/dotfiles/resources/wallpaper.png
+exec --no-startup-id feh --bg-fill $HOME/projects/dotfiles/resources/wallpaper.png
 
 # colors
 # class                 border  backgr. text    indicator child_border
