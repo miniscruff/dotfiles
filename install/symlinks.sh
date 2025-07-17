@@ -5,7 +5,6 @@ DOTFILES=$HOME/projects/miniscruff/dotfiles
 
 mkdir -p $HOME/apps
 mkdir -p $HOME/.config
-mkdir -p $HOME/.config/alacritty
 mkdir -p $HOME/.config/fontconfig
 mkdir -p $HOME/.config/ghostty
 mkdir -p $HOME/.config/i3
@@ -24,7 +23,6 @@ mkdir -p $HOME/.config/zellij
 mkdir -p $HOME/.local
 mkdir -p $HOME/.local/bin
 
-ln -f $DOTFILES/settings/.config/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 ln -f $DOTFILES/settings/.config/fontconfig/fonts.conf $HOME/.config/fontconfig/fonts.conf
 ln -f $DOTFILES/settings/.config/ghostty/config $HOME/.config/ghostty/config
 ln -f $DOTFILES/settings/.config/i3/config $HOME/.config/i3/config
