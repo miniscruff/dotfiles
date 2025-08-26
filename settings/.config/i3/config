@@ -144,8 +144,8 @@ bindsym $mod+shift+u exec --no-startup-id xrandr --output eDP-1 --brightness $(x
 bindsym $mod+ctrl+u exec --no-startup-id xrandr --output eDP-1 --brightness 0.5
 
 # shortcuts to scripts
-bindsym $mod+q exec $HOME/.local/bin/projects.sh
-for_window [title="floating"] floating enable, resize set 800 500
+# bindsym $mod+q exec $HOME/.local/bin/projects.sh
+# for_window [title="floating"] floating enable, resize set 800 500
 
 # borders and edges
 default_border pixel
