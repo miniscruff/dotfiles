@@ -50,6 +50,8 @@ keybinds clear-defaults=true {
         bind "j" { MovePane "down"; }
         bind "k" { MovePane "up"; }
         bind "l" { MovePane "right"; }
+        bind "H" { MoveTab "left"; }
+        bind "L" { MoveTab "right"; }
     }
     shared_among "scroll" "search" {
         bind "esc" { SwitchToMode "locked"; }
