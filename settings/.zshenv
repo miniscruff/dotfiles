@@ -20,6 +20,9 @@ export EDITOR=nvim
 export PAGER="bat -p"
 export GPG_TTY=$TTY
 
+# aliases
+alias mr="mise run"
+
 # language info
 LANG=en_US.UTF-8
 LC_ALL=en_US.UTF-8
