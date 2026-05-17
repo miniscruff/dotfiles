@@ -1,7 +1,7 @@
 #! /bin/bash
 set -exu
 
-DOTFILES=$HOME/projects/miniscruff/dotfiles
+DOTFILES=$HOME/projects/dotfiles
 
 mkdir -p $HOME/apps
 mkdir -p $HOME/.config

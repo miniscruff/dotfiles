@@ -40,7 +40,3 @@ opt.smartindent = true
 opt.autoindent = true
 opt.wrap = false
 
--- file types
-vim.filetype.add({
-  extension = { templ = "templ", justfile = "make" }
-})

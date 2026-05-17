@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    branch = "master",
+    branch = "main",
     config = function()
       require("nvim-treesitter").setup({
         ensure_installed = { "core", "go" },
