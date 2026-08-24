@@ -32,6 +32,7 @@ ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/css.lua $HOME/.config/nvim/
 ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/go.lua $HOME/.config/nvim/after/ftplugin/go.lua
 ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/html.lua $HOME/.config/nvim/after/ftplugin/html.lua
 ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/lua.lua $HOME/.config/nvim/after/ftplugin/lua.lua
+ln -f $DOTFILES/settings/.config/nvim/after/ftplugin/tsx.lua $HOME/.config/nvim/after/ftplugin/tsx.lua
 ln -f $DOTFILES/settings/.config/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -f $DOTFILES/settings/.config/nvim/lua/config/lazy.lua $HOME/.config/nvim/lua/config/lazy.lua
 ln -f $DOTFILES/settings/.config/nvim/lua/plugins/catppuccin.lua $HOME/.config/nvim/lua/plugins/catppuccin.lua

@@ -39,4 +39,3 @@ opt.shiftwidth = 4
 opt.smartindent = true
 opt.autoindent = true
 opt.wrap = false
-

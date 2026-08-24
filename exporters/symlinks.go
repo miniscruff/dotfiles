@@ -25,7 +25,7 @@ func (e *SymlinksExporter) Export(_ []tool.Tool) error {
 
 	_, _ = e.writer.Write([]byte("#! /bin/bash\n"))
 	_, _ = e.writer.Write([]byte("set -exu\n\n"))
-	_, _ = e.writer.Write([]byte("DOTFILES=$HOME/projects/miniscruff/dotfiles\n\n"))
+	_, _ = e.writer.Write([]byte("DOTFILES=$HOME/projects/dotfiles\n\n"))
 
 	// include the apps directory
 	_, _ = e.writer.Write([]byte("mkdir -p $HOME/apps\n"))

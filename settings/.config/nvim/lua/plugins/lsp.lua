@@ -37,6 +37,13 @@ return {
 
       require("lsp_lines").setup()
       vim.diagnostic.config { virtual_text = false }
+
+      require('lspconfig').tsserver.setup {
+          filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+          cmd = { "typescript-language-server", "--stdio" },
+          -- other configurations
+      }
     end,
   },
 }
+
